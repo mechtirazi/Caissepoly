@@ -159,3 +159,4 @@ C:\Users\msi\source\repos\CaissePoly\CaissePoly\bin\Debug\net8.0-windows\CaisseP
 C:\Users\msi\source\repos\CaissePoly\CaissePoly\bin\Debug\net8.0-windows\CaissePoly.pdb
 C:\Users\msi\source\repos\CaissePoly\CaissePoly\obj\Debug\net8.0-windows\CaissePoly.genruntimeconfig.cache
 C:\Users\msi\source\repos\CaissePoly\CaissePoly\obj\Debug\net8.0-windows\ref\CaissePoly.dll
+C:\Users\msi\source\repos\CaissePoly\CaissePoly\obj\Debug\net8.0-windows\CaissePoly.sourcelink.json

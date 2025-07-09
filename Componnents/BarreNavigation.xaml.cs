@@ -1,6 +1,7 @@
 ﻿using System;
 using System.ComponentModel;
 using System.Timers;
+using System.Windows;
 using System.Windows.Controls;
 
 namespace CaissePoly.Componnents
@@ -51,5 +52,14 @@ namespace CaissePoly.Componnents
         public event PropertyChangedEventHandler? PropertyChanged;
         protected void OnPropertyChanged(string name) =>
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
+
+        private void Button_Click(object sender, System.Windows.RoutedEventArgs e)
+        {
+            // Récupérer la fenêtre parente
+            Window parentWindow = Window.GetWindow(this);
+
+            // Fermer la fenêtre
+            parentWindow.Close();
+        }
     }
 }

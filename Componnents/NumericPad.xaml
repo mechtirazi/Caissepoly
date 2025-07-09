@@ -126,7 +126,7 @@
            
             <Button Content="Entrée" Grid.Row="3" Grid.Column="3" Style="{StaticResource EnterButtonStyle}" Command="{Binding EnterCommand}"/>
             <Button Content="⌫" Grid.Row="3" Grid.Column="2" Style="{StaticResource RoundButtonStyle}" Command="{Binding DeleteCharCommand}"/>
-            <Button Content="Supprimer article" Style="{StaticResource RoundButtonStyle}" Command="{Binding DeleteArticleCommand}" Margin="10"/>
+            <Button Content="Supprimer &#xD;&#xA;    article" Style="{StaticResource RoundButtonStyle}" Command="{Binding DeleteArticleCommand}" Margin="6,10,10,10"  Grid.Row="1" Grid.Column="3" Cursor="Hand" Click="Button_Click" FontSize="10"/>
             <Button Content="✅ Valider commande"
         Grid.Row="2"
                      Grid.Column="3"
