@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CaissePoly.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,7 +24,7 @@ namespace CaissePoly.Componnents
         public SearchBox()
         {
             InitializeComponent();
-            this.DataContext = new SearchBoxViewModel(); // Set ViewModel as DataContext
+          
         }
     }
 }

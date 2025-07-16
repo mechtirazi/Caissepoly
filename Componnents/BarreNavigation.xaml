@@ -7,53 +7,64 @@
              d:DesignHeight="60" d:DesignWidth="800">
     <Grid Background="#F8FAFC" Height="60">
         <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="120"/>
+            <!-- Date -->
             <ColumnDefinition Width="100"/>
-            <ColumnDefinition Width="100"/>
-            <ColumnDefinition Width="100"/>
-            <ColumnDefinition Width="100"/>
-            <ColumnDefinition Width="100"/>
+            <!-- Caissier -->
+            <ColumnDefinition Width="80"/>
+            <!-- Caisse -->
             <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="50"/>
-            <ColumnDefinition Width="50"/>
+            <!-- App Name -->
+            <ColumnDefinition Width="Auto"/>
+            <!-- Home Button -->
+            <ColumnDefinition Width="Auto"/>
+            <!-- Close Button -->
         </Grid.ColumnDefinitions>
 
         <!-- Date et Heure -->
-        <StackPanel Grid.Column="0" Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
-            <TextBlock Text="DDate" FontWeight="Bold" FontSize="12" Foreground="#334155" HorizontalAlignment="Center"/>
-            <TextBlock Text="{Binding CurrentDate}" FontSize="11" Foreground="#EF4444" HorizontalAlignment="Center"/>
-            <TextBlock Text="{Binding CurrentTime}" FontSize="11" Foreground="#EF4444" HorizontalAlignment="Center"/>
-        </StackPanel>
+        <Border Grid.Column="0" Background="#FFFFFF" Margin="5" CornerRadius="4" BorderThickness="1" BorderBrush="#E2E8F0">
+            <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">
+                <TextBlock Text="DATE" FontWeight="Bold" FontSize="10" Foreground="#64748B" HorizontalAlignment="Center" />
+                <TextBlock Text="{Binding CurrentDate}" FontSize="12" Foreground="#1E293B" HorizontalAlignment="Center" FontWeight="SemiBold"/>
+                <TextBlock Text="{Binding CurrentTime}" FontSize="11" Foreground="#64748B" HorizontalAlignment="Center"/>
+            </StackPanel>
+        </Border>
 
         <!-- Caissier -->
-        <StackPanel Grid.Column="1" Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
-            <TextBlock Text="Caissier" FontWeight="Bold" FontSize="12" Foreground="#334155"/>
-            <TextBlock Text="Admin" FontSize="11" Foreground="#EF4444"/>
-        </StackPanel>
+        <Border Grid.Column="1" Background="#FFFFFF" Margin="5" CornerRadius="4" BorderThickness="1" BorderBrush="#E2E8F0">
+            <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">
+                <TextBlock Text="CAISSIER" FontWeight="Bold" FontSize="10" Foreground="#64748B" HorizontalAlignment="Center" />
+                <TextBlock Text="Admin" FontSize="12" Foreground="#1E293B" HorizontalAlignment="Center" FontWeight="SemiBold"/>
+            </StackPanel>
+        </Border>
 
         <!-- Caisse -->
-        <StackPanel Grid.Column="2" Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
-            <TextBlock Text="Caisse" FontWeight="Bold" FontSize="12" Foreground="#334155"/>
-            <TextBlock Text="C1" FontSize="11" Foreground="#EF4444"/>
-        </StackPanel>
+        <Border Grid.Column="2" Background="#FFFFFF" Margin="5" CornerRadius="4" BorderThickness="1" BorderBrush="#E2E8F0">
+            <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">
+                <TextBlock Text="CAISSE" FontWeight="Bold" FontSize="10" Foreground="#64748B" HorizontalAlignment="Center"/>
+                <TextBlock Text="C1" FontSize="12" Foreground="#1E293B" HorizontalAlignment="Center" FontWeight="SemiBold"/>
+            </StackPanel>
+        </Border>
 
-        <!-- Nom App -->
+        <!-- App Name Section -->
         <StackPanel Grid.Column="3" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
-            <TextBlock Text="" FontWeight="Bold" FontSize="16" Foreground="#F59E0B" Margin="2,0" Width="100"/>
-            <TextBlock Text="POLYSOFT" FontWeight="Bold" FontSize="16" Foreground="#3B82F6"/>
-            <TextBlock Text="CO" FontWeight="Bold" FontSize="16" Foreground="#F59E0B"/>
+            <TextBlock Text="POLY" FontWeight="Bold" FontSize="24" Foreground="#F59E0B" Margin="0,0,10,0"/>
+            <TextBlock Text="SOFT" FontWeight="Bold" FontSize="24" Foreground="#3B82F6"/>
         </StackPanel>
 
-        <!-- Spacer colonne vide -->
-        <StackPanel Grid.Column="5"/>
+        <!-- Action Buttons -->
+        <StackPanel Grid.Column="4" Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,10,0">
+            <!-- Home Button -->
+            <Button Width="36" Height="36" Background="White" BorderBrush="#E2E8F0" BorderThickness="1" ToolTip="Accueil" Margin="0,0,10,0">
+                <Viewbox Width="16" Height="16">
+                    <Path Data="M5,10 L10,5 L15,10 L13,10 L13,15 L7,15 L7,10 Z" Fill="#334155"/>
+                </Viewbox>
+            </Button>
 
-        <!-- Home Button -->
-        <Button Grid.Column="6" Width="30" Height="30" Background="#E2E8F0" BorderBrush="#CBD5E1" BorderThickness="1" ToolTip="Accueil">
-            <Path Data="M5,10 L10,5 L15,10 L13,10 L13,15 L7,15 L7,10 Z" Fill="#334155"/>
-        </Button>
-
-        <!-- Close Button -->
-        <Button Grid.Column="7" Width="30" Height="30" Background="#EF4444" BorderBrush="Transparent" ToolTip="Fermer">
-            <TextBlock Text="✕" FontSize="14" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-        </Button>
+            <!-- Close Button -->
+            <Button Width="36" Height="36" Background="#EF4444" BorderBrush="Transparent"  ToolTip="Fermer" Click="Button_Click">
+                <TextBlock Text="✕" FontSize="14" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            </Button>
+        </StackPanel>
     </Grid>
 </UserControl>

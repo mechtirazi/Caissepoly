@@ -29,6 +29,41 @@ namespace CaissePoly.ViewModel
                 ChargerArticlesParFamille();
             }
         }
+
+        private string _searchText = "";
+
+        public string SearchText
+        {
+            get => _searchText;
+            set
+            {
+                if (_searchText != value)
+                {
+                    _searchText = value;
+                    OnPropertyChanged();
+                }
+            }
+        }
+
+        public ICommand SearchCommand { get; }
+
+        public event Action<string> OnSearchRequested; // Si tu veux réagir dans un parent
+
+
+        private List<Article> TousLesArticles = new(); // ✅ Liste complète à filtrer
+
+
+        private bool _isReadOnly;
+        public bool IsReadOnly
+        {
+            get => _isReadOnly;
+            set
+            {
+                _isReadOnly = value;
+                OnPropertyChanged();
+            }
+        }
+
         private int _selectedTicket;
         public int SelectedTicket
         {
@@ -101,6 +136,7 @@ namespace CaissePoly.ViewModel
             get => _paiement;
             set { _paiement = value; OnPropertyChanged(); }
         }
+    
 
 
         public Action CloseWindowAction { get; set; }
@@ -118,12 +154,27 @@ namespace CaissePoly.ViewModel
         public ICommand EspeceCommand{ get; }
         public ICommand CancelCommand { get; }
 
+        public ICommand AfficherFamillesCommand { get; }
+
+        private bool _afficherFamilles;
+
+        public bool AfficherFamilles
+        {
+            get => _afficherFamilles;
+            set
+            {
+                _afficherFamilles = value;
+                OnPropertyChanged();
+                ChargerArticlesParFamille();
+            }
+        }
 
         public MainViewModel()
         {
             _context.Database.EnsureCreated();
             Familles = new ObservableCollection<Famille>(_context.Famille.ToList());
             ListeTickets = new ObservableCollection<int>(_context.Tickets.Select(t => t.IdT));
+            ArticlesParFamille = new ObservableCollection<Article>(_context.Article.ToList());
 
             SelectFamilleCommand = new RelayCommand<Famille>(fam =>
             {
@@ -147,6 +198,7 @@ namespace CaissePoly.ViewModel
 
             EnterCommand = new RelayCommand(() =>
             {
+                if (IsReadOnly) return; // Prevent modification if in read-only mode
                 if (int.TryParse(ValeurSaisie, out int quantite) && SelectedArticle != null)
                 {
                     SelectedArticle.quantiteVente = quantite;
@@ -154,6 +206,33 @@ namespace CaissePoly.ViewModel
                     _context.SaveChanges();
                     ValeurSaisie = "";
                 }
+            });
+            SearchCommand = new RelayCommand(() =>
+            {
+                Console.WriteLine($"🔍 Recherche lancée : {SearchText}");
+                OnSearchRequested?.Invoke(SearchText);
+
+                if (SearchText != null)
+                {
+                    var filteredArticles = _context.Article
+                        .Where(a => a.designation.ToLower().Contains(SearchText.ToLower()))
+                        .ToList();
+
+                    ArticlesParFamille = new ObservableCollection<Article>(filteredArticles);
+                }
+                else
+                {
+                    ChargerArticlesParFamille();
+                }
+            });
+
+
+
+            AfficherFamillesCommand = new RelayCommand(() =>
+            {
+                AfficherFamilles = !AfficherFamilles;
+                ArticlesParFamille.Clear();
+                ArticlesParFamille = new ObservableCollection<Article>(_context.Article.ToList());
             });
 
             DeleteCharCommand = new RelayCommand(() =>
@@ -205,7 +284,7 @@ namespace CaissePoly.ViewModel
 
             if (ListeTickets.Any())
             {
-                SelectedTicket = ListeTickets.First();
+                SelectedTicket = ListeTickets.Last();
             }
             CancelCommand = new RelayCommand(() =>
             {
@@ -252,13 +331,18 @@ namespace CaissePoly.ViewModel
         {
             if (SelectedFamille != null)
             {
-                ArticlesParFamille = new ObservableCollection<Article>(
-                    _context.Article.Where(a => a.idF == SelectedFamille.idF).ToList()
-                );
+                TousLesArticles = _context.Article
+                    .Where(a => a.idF == SelectedFamille.idF)
+                    .ToList();
+
+                ArticlesParFamille = new ObservableCollection<Article>(TousLesArticles);
+                
             }
             else
             {
+                TousLesArticles = new List<Article>();
                 ArticlesParFamille.Clear();
+                FilteredArticles.Clear();
             }
         }
 
@@ -288,6 +372,7 @@ namespace CaissePoly.ViewModel
                         FilteredArticles.Add(vente.Article);
                     }
                 }
+                IsReadOnly = true; // Or add logic to determine if it's an old ticket
             }
             else
             {

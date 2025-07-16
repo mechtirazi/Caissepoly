@@ -18,16 +18,29 @@ namespace CaissePoly
     {
 
 
-        private familleViewModel familleVM = new familleViewModel();
-        private NumeroTicketViewModel ticketVM = new NumeroTicketViewModel();
+
 
         public MainWindow()
         {
             InitializeComponent();
             this.DataContext = new MainViewModel();
         }
+        private void MinimizeWindow(object sender, RoutedEventArgs e)
+        {
+            this.WindowState = WindowState.Minimized;
+        }
 
-       
+        private void MaximizeWindow(object sender, RoutedEventArgs e)
+        {
+            this.WindowState = this.WindowState == WindowState.Maximized ? WindowState.Normal : WindowState.Maximized;
+        }
+
+        private void CloseWindow(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
+
+
 
 
 
