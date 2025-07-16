@@ -7,10 +7,11 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Windows;
 using System.Windows.Input;
+using static CaissePoly.espece;
 
 namespace CaissePoly.ViewModel
 {
-    public class MainViewModel : INotifyPropertyChanged
+    public class MainViewModel :INotifyPropertyChanged
     {
         private readonly CDBContext _context = new CDBContext();
 
@@ -28,7 +29,6 @@ namespace CaissePoly.ViewModel
                 ChargerArticlesParFamille();
             }
         }
-
         private int _selectedTicket;
         public int SelectedTicket
         {
@@ -95,13 +95,17 @@ namespace CaissePoly.ViewModel
             get => _totalTicket;
             set { _totalTicket = value; OnPropertyChanged(); }
         }
-
         private string _paiement;
         public string Paiement
         {
             get => _paiement;
             set { _paiement = value; OnPropertyChanged(); }
         }
+
+
+        public Action CloseWindowAction { get; set; }
+
+
 
         public ICommand SelectFamilleCommand { get; }
         public ICommand SelectArticleCommand { get; }
@@ -110,6 +114,10 @@ namespace CaissePoly.ViewModel
         public ICommand EnterCommand { get; }
         public ICommand DeleteCharCommand { get; }
         public ICommand DeleteArticleCommand { get; }
+        public ICommand ValiderPaiementCommand { get; }
+        public ICommand EspeceCommand{ get; }
+        public ICommand CancelCommand { get; }
+
 
         public MainViewModel()
         {
@@ -171,7 +179,6 @@ namespace CaissePoly.ViewModel
                 {
                     DateTicket = DateTime.Now,
                     Total = TotalTicket,
-                    ModePaiement = "Espèce"
                 };
 
                 foreach (var article in FilteredArticles)
@@ -200,6 +207,45 @@ namespace CaissePoly.ViewModel
             {
                 SelectedTicket = ListeTickets.First();
             }
+            CancelCommand = new RelayCommand(() =>
+            {
+                CloseWindowAction?.Invoke();
+            });
+
+            ValiderPaiementCommand = new RelayCommand(() =>
+            {
+                var ticket = _context.Tickets.FirstOrDefault(t => t.IdT == SelectedTicket);
+                if (ticket != null)
+                {
+                    ticket.ModePaiement = Paiement; // Paiement est la propriété qui sera "Espèce" ou autre
+                    _context.SaveChanges();
+
+                    MessageBox.Show($"Le mode de paiement du ticket {SelectedTicket} est mis à jour à {Paiement}");
+                }
+                else
+                {
+                    MessageBox.Show("Aucun ticket sélectionné");
+                }
+
+                CloseWindowAction?.Invoke();
+            });
+
+            EspeceCommand = new RelayCommand(() =>
+            {
+
+                var ticket = _context.Tickets.FirstOrDefault(t => t.IdT == SelectedTicket);
+                if (ticket != null)
+                {
+                    var vm = new EspeceViewModel(ticket);
+                    var window = new espece(vm);
+                    window.ShowDialog();
+                    UpdateTicketInfo(); // Recharge les infos après fermeture
+                }
+                else
+                {
+                    MessageBox.Show("Aucun ticket sélectionné");
+                }
+            });
         }
 
         private void ChargerArticlesParFamille()
@@ -255,6 +301,20 @@ namespace CaissePoly.ViewModel
         {
             TotalTicket = FilteredArticles.Sum(a => a.Total);
         }
+        public void ValiderPaiementEnEspece()
+        {
+            Paiement = "Espèce";
+
+            var ticket = _context.Tickets.FirstOrDefault(t => t.IdT == SelectedTicket);
+            if (ticket != null)
+            {
+                ticket.ModePaiement = Paiement;
+                _context.SaveChanges();
+            }
+
+            CloseWindowAction?.Invoke();
+        }
+
 
         private void Article_PropertyChanged(object sender, PropertyChangedEventArgs e)
         {
