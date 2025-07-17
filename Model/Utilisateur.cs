@@ -14,6 +14,7 @@ namespace CaissePoly.Model
         [Required(ErrorMessage = "Le nom d'utilisateur est obligatoire")]
         public string nomU { get; set; }
         public string Role { get; set; }
+        public string MP { get; set; }
         public virtual ICollection<Vente> Vente { get; set; } = new List<Vente>();
     }
 }

@@ -13,6 +13,9 @@
     <Compile Update="Componnents\BarreNavigation.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Componnents\boutton\Espece.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Componnents\FamilleList.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -23,6 +26,12 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Componnents\SearchBox.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="espece.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Login.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Views\CaisseView.xaml.cs">
@@ -36,6 +45,9 @@
     <Page Update="Componnents\BarreNavigation.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="Componnents\boutton\Espece.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Componnents\FamilleList.xaml">
       <SubType>Designer</SubType>
     </Page>
@@ -46,6 +58,12 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Componnents\SearchBox.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="espece.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Login.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="MainWindow.xaml">

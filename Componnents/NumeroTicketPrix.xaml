@@ -5,82 +5,78 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="600">
-
-    <Grid Background="#F8FAFC"  >
+    <Grid Background="#F1F5F9" >
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-        <!-- Header section -->
-        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0 0 0 20">
-            <TextBlock Text="N° Ticket :" 
-                       FontWeight="SemiBold" 
-                       FontSize="20"
-                       Foreground="#1E293B"
-                       VerticalAlignment="Center"/>
+        <!-- 🔵 Header: Ticket Selector -->
+        <Border Background="White"
+                CornerRadius="10"
+                Padding="16"
+                BorderBrush="#CBD5E1"
+                BorderThickness="1"
+                Margin="0 0 0 16"
+                HorizontalAlignment="Center"
+                Width="350">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <TextBlock Text="N° Ticket :" 
+                           FontWeight="SemiBold" 
+                           FontSize="18"
+                           Foreground="#1E293B"
+                           VerticalAlignment="Center"
+                           Margin="0,0,10,0"/>
 
-            <ComboBox Width="180" 
-                      Height="40"
-                      FontSize="16"
-                      ItemsSource="{Binding ListeTickets}"
-                      SelectedItem="{Binding SelectedTicket, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                      IsEditable="True"
-                      Background="White"
-                      BorderBrush="#E2E8F0"
-                      Foreground="#0F172A"
-                      Padding="4"
-                      Margin="5 0" SelectionChanged="ComboBox_SelectionChanged"
-                      />
-        </StackPanel>
+                <ComboBox Width="200" 
+                          Height="38"
+                          FontSize="16"
+                          ItemsSource="{Binding ListeTickets}"
+                          SelectedItem="{Binding SelectedTicket, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                          IsEditable="True"
+                          Background="White"
+                          BorderBrush="#E2E8F0"
+                          Foreground="#0F172A"
+                          Padding="4"
+                          Margin="0"
+                          />
+            </StackPanel>
+        </Border>
 
-        <!-- Main content -->
-        <Grid Grid.Row="1">
+        <!-- 🟢 Main Section: Total Ticket -->
+        <Grid Grid.Row="1" Margin="0">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="1*"/>
                 <ColumnDefinition Width="2*"/>
             </Grid.ColumnDefinitions>
 
-            <!-- Paiement Text -->
-            <Border Background="White"
+            <!-- Section vide à gauche (future zone paiement ou détail ticket ?) -->
+            <Border Grid.Column="0"
+                    Background="Transparent"
+                    BorderBrush="Transparent"
                     BorderThickness="1"
-                    BorderBrush="#CBD5E1"
-                    CornerRadius="10"
-                    Padding="16"
-                    Margin="0 0 10 0"
-                    VerticalAlignment="Center"
-                    HorizontalAlignment="Stretch"
-                    Grid.Column="0">
-                <StackPanel>
-                    <TextBlock Text="Paiement"
-                               FontSize="14"
-                               Foreground="#64748B"
-                               FontWeight="Medium"/>
-                    <TextBlock Text="{Binding Paiement}" 
-                               FontSize="24" 
-                               FontWeight="Bold" 
-                               Foreground="#2563EB"/>
-                </StackPanel>
-            </Border>
+                    CornerRadius="8"
+                    Margin="0"/>
 
-            <!-- Total Ticket -->
+            <!-- 🧾 Total Ticket à droite -->
             <Border Background="White"
                     BorderThickness="1"
                     BorderBrush="#CBD5E1"
-                    CornerRadius="10"
-                    Padding="16"
-                    VerticalAlignment="Center"
-                    HorizontalAlignment="Stretch"
-                    Grid.Column="1">
-                <StackPanel>
-                    <TextBlock Text="Total" 
-                               FontSize="14" 
+                    CornerRadius="12"
+                    Padding="20"
+                    VerticalAlignment="Center" Grid.ColumnSpan="2" Margin="100,0,100,0">
+                <StackPanel HorizontalAlignment="Center">
+                    <TextBlock Text="Total à payer" 
+                               FontSize="16" 
                                Foreground="#64748B"
-                               FontWeight="Medium"/>
+                               FontWeight="Medium"
+                               HorizontalAlignment="Center"
+                               Margin="0,0,0,6"/>
                     <TextBlock Text="{Binding TotalTicket, StringFormat={}{0:F3} DT}" 
-                               FontSize="24" 
+                               FontSize="30" 
                                FontWeight="Bold" 
-                               Foreground="#10B981"/>
+                               Foreground="#10B981"
+                               HorizontalAlignment="Center"/>
                 </StackPanel>
             </Border>
         </Grid>

@@ -81,6 +81,10 @@ namespace CaissePoly.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("idU"));
 
+                    b.Property<string>("MP")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Role")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -124,7 +128,7 @@ namespace CaissePoly.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("IdV"));
 
-                    b.Property<int?>("ArticleidA")
+                    b.Property<int>("ArticleidA")
                         .HasColumnType("int");
 
                     b.Property<int>("IdA")
@@ -164,9 +168,11 @@ namespace CaissePoly.Migrations
 
             modelBuilder.Entity("Vente", b =>
                 {
-                    b.HasOne("CaissePoly.Model.Article", null)
+                    b.HasOne("CaissePoly.Model.Article", "Article")
                         .WithMany("Vente")
-                        .HasForeignKey("ArticleidA");
+                        .HasForeignKey("ArticleidA")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.HasOne("Ticket", null)
                         .WithMany("Ventes")
@@ -175,6 +181,8 @@ namespace CaissePoly.Migrations
                     b.HasOne("CaissePoly.Model.Utilisateur", null)
                         .WithMany("Vente")
                         .HasForeignKey("UtilisateuridU");
+
+                    b.Navigation("Article");
                 });
 
             modelBuilder.Entity("CaissePoly.Model.Article", b =>

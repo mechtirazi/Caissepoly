@@ -1,0 +1,69 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\fkiah\\OneDrive\\Bureau\\Net\\TP1\\CaissePoly\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{EF103531-A2F5-4FA8-A2D1-837DD0F92058}|CaissePoly.csproj|c:\\users\\fkiah\\onedrive\\bureau\\net\\tp1\\caissepoly\\viewmodel\\mainviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EF103531-A2F5-4FA8-A2D1-837DD0F92058}|CaissePoly.csproj|solutionrelative:viewmodel\\mainviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EF103531-A2F5-4FA8-A2D1-837DD0F92058}|CaissePoly.csproj|c:\\users\\fkiah\\onedrive\\bureau\\net\\tp1\\caissepoly\\model\\cdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EF103531-A2F5-4FA8-A2D1-837DD0F92058}|CaissePoly.csproj|solutionrelative:model\\cdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EF103531-A2F5-4FA8-A2D1-837DD0F92058}|CaissePoly.csproj|c:\\users\\fkiah\\onedrive\\bureau\\net\\tp1\\caissepoly\\model\\utilisateur.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EF103531-A2F5-4FA8-A2D1-837DD0F92058}|CaissePoly.csproj|solutionrelative:model\\utilisateur.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "MainViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\fkiah\\OneDrive\\Bureau\\Net\\TP1\\CaissePoly\\ViewModel\\MainViewModel.cs",
+              "RelativeDocumentMoniker": "ViewModel\\MainViewModel.cs",
+              "ToolTip": "C:\\Users\\fkiah\\OneDrive\\Bureau\\Net\\TP1\\CaissePoly\\ViewModel\\MainViewModel.cs",
+              "RelativeToolTip": "ViewModel\\MainViewModel.cs",
+              "ViewState": "AgIAAHkAAAAAAAAAAAAcwIAAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-16T23:46:51.653Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "CDBContext.cs",
+              "DocumentMoniker": "C:\\Users\\fkiah\\OneDrive\\Bureau\\Net\\TP1\\CaissePoly\\Model\\CDBContext.cs",
+              "RelativeDocumentMoniker": "Model\\CDBContext.cs",
+              "ToolTip": "C:\\Users\\fkiah\\OneDrive\\Bureau\\Net\\TP1\\CaissePoly\\Model\\CDBContext.cs",
+              "RelativeToolTip": "Model\\CDBContext.cs",
+              "ViewState": "AgIAABsAAAAAAAAAAAAIwBkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-16T04:00:57.882Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Utilisateur.cs",
+              "DocumentMoniker": "C:\\Users\\fkiah\\OneDrive\\Bureau\\Net\\TP1\\CaissePoly\\Model\\Utilisateur.cs",
+              "RelativeDocumentMoniker": "Model\\Utilisateur.cs",
+              "ToolTip": "C:\\Users\\fkiah\\OneDrive\\Bureau\\Net\\TP1\\CaissePoly\\Model\\Utilisateur.cs",
+              "RelativeToolTip": "Model\\Utilisateur.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-16T03:52:09.236Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

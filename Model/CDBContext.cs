@@ -29,7 +29,7 @@ namespace CaissePoly.Model
             public CDBContext CreateDbContext(string[] args)
             {
                 var optionsBuilder = new DbContextOptionsBuilder<CDBContext>();
-                optionsBuilder.UseSqlServer(@"Server=(localdb)\MSSQLLocalDB\MSSQLLocalDB;Database=caisse;Trusted_Connection=True;");
+                optionsBuilder.UseSqlServer(@"Server=(localdb)\MSSQLLocalDB;Database=caisse;Trusted_Connection=True;");
                 return new CDBContext(optionsBuilder.Options);
             }
         }
