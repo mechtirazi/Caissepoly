@@ -40,6 +40,11 @@ namespace CaissePoly
             this.Close();
         }
 
+        private void CaisseView_Loaded(object sender, RoutedEventArgs e)
+        {
+
+        }
+
 
 
 

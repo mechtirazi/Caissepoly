@@ -166,3 +166,11 @@ C:\Users\fkiah\OneDrive\Bureau\Net\TP1\CaissePoly\obj\Debug\net8.0-windows\refin
 C:\Users\fkiah\OneDrive\Bureau\Net\TP1\CaissePoly\obj\Debug\net8.0-windows\CaissePoly.pdb
 C:\Users\fkiah\OneDrive\Bureau\Net\TP1\CaissePoly\obj\Debug\net8.0-windows\CaissePoly.genruntimeconfig.cache
 C:\Users\fkiah\OneDrive\Bureau\Net\TP1\CaissePoly\obj\Debug\net8.0-windows\ref\CaissePoly.dll
+C:\Users\fkiah\OneDrive\Bureau\Net\TP1\CaissePoly\obj\Debug\net8.0-windows\admin\MenuPrincipal.g.cs
+C:\Users\fkiah\OneDrive\Bureau\Net\TP1\CaissePoly\obj\Debug\net8.0-windows\admin\MenuPrincipale.g.cs
+C:\Users\fkiah\OneDrive\Bureau\Net\TP1\CaissePoly\obj\Debug\net8.0-windows\App.baml
+C:\Users\fkiah\OneDrive\Bureau\Net\TP1\CaissePoly\obj\Debug\net8.0-windows\admin\MenuPrincipal.baml
+C:\Users\fkiah\OneDrive\Bureau\Net\TP1\CaissePoly\obj\Debug\net8.0-windows\admin\MenuPrincipale.baml
+C:\Users\fkiah\OneDrive\Bureau\Net\TP1\CaissePoly\bin\Debug\net8.0-windows\FontAwesome.WPF.dll
+C:\Users\fkiah\OneDrive\Bureau\Net\TP1\CaissePoly\obj\Debug\net8.0-windows\admin\LoginAdmin.g.cs
+C:\Users\fkiah\OneDrive\Bureau\Net\TP1\CaissePoly\obj\Debug\net8.0-windows\admin\LoginAdmin.baml

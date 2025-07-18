@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace CaissePoly.Model
 {
-    class Utilisateur
+    public class Utilisateur
     {
         [Key]
         public int idU { get; set; }
