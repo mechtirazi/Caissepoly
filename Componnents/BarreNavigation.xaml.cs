@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CaissePoly.admin;
+using System;
 using System.ComponentModel;
 using System.Timers;
 using System.Windows;
@@ -61,5 +62,49 @@ namespace CaissePoly.Componnents
             // Fermer la fenêtre
             parentWindow.Close();
         }
+
+        private void AccueilButton_Click(object sender, RoutedEventArgs e)
+        {
+            var loginWindow = new LoginAdmin();
+            var result = loginWindow.ShowDialog();
+
+            if (result == true && loginWindow.UtilisateurConnecte != null)
+            {
+                var utilisateur = loginWindow.UtilisateurConnecte;
+
+                // Vérifier que c'est bien un administrateur
+                if (utilisateur.Role == "Administrateur")
+                {
+                    // Chercher si une fenêtre avec MenuPrincipale est déjà ouverte
+                    foreach (Window window in Application.Current.Windows)
+                    {
+                        if (window.Content is CaissePoly.admin.MenuPrincipale)
+                        {
+                            window.Activate(); // Met cette fenêtre au premier plan
+                            Window.GetWindow(this)?.Close(); // Ferme la fenêtre actuelle
+                            return;
+                        }
+                    }
+
+                    // Sinon créer et afficher une nouvelle fenêtre MenuPrincipale
+                    var menuPrincipal = new Window
+                    {
+                        Title = "Menu Principal",
+                        Content = new CaissePoly.admin.MenuPrincipale(),
+                        Width = 800,
+                        Height = 600
+                    };
+                    menuPrincipal.Show();
+
+                    // Fermer la fenêtre actuelle
+                    Window.GetWindow(this)?.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Accès refusé. Vous n'avez pas les droits administrateur.", "Accès refusé", MessageBoxButton.OK, MessageBoxImage.Warning);
+                }
+            }
+        }
+
     }
 }

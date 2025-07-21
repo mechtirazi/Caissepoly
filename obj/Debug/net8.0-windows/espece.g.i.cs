@@ -53,7 +53,7 @@ namespace CaissePoly {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/CaissePoly;component/espece.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/CaissePoly;V1.0.0.0;component/espece.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\espece.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

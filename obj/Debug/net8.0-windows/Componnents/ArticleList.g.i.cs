@@ -53,7 +53,7 @@ namespace CaissePoly.Componnents {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/CaissePoly;component/componnents/articlelist.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/CaissePoly;V1.0.0.0;component/componnents/articlelist.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\Componnents\ArticleList.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

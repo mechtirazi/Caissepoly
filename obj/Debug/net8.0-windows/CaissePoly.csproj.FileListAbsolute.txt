@@ -166,6 +166,7 @@ C:\Users\fkiah\OneDrive\Bureau\Net\TP1\CaissePoly\obj\Debug\net8.0-windows\refin
 C:\Users\fkiah\OneDrive\Bureau\Net\TP1\CaissePoly\obj\Debug\net8.0-windows\CaissePoly.pdb
 C:\Users\fkiah\OneDrive\Bureau\Net\TP1\CaissePoly\obj\Debug\net8.0-windows\CaissePoly.genruntimeconfig.cache
 C:\Users\fkiah\OneDrive\Bureau\Net\TP1\CaissePoly\obj\Debug\net8.0-windows\ref\CaissePoly.dll
+<<<<<<< HEAD
 C:\Users\msi\source\repos\CaissePoly\CaissePoly\bin\Debug\net8.0-windows\CaissePoly.exe
 C:\Users\msi\source\repos\CaissePoly\CaissePoly\bin\Debug\net8.0-windows\CaissePoly.deps.json
 C:\Users\msi\source\repos\CaissePoly\CaissePoly\bin\Debug\net8.0-windows\CaissePoly.runtimeconfig.json
@@ -336,3 +337,16 @@ C:\Users\msi\source\repos\CaissePoly\CaissePoly\obj\Debug\net8.0-windows\CaisseP
 C:\Users\msi\source\repos\CaissePoly\CaissePoly\obj\Debug\net8.0-windows\ref\CaissePoly.dll
 C:\Users\msi\source\repos\CaissePoly\CaissePoly\obj\Debug\net8.0-windows\FicheArticle.g.cs
 C:\Users\msi\source\repos\CaissePoly\CaissePoly\obj\Debug\net8.0-windows\FicheArticle.baml
+=======
+C:\Users\fkiah\OneDrive\Bureau\Net\TP1\CaissePoly\obj\Debug\net8.0-windows\admin\MenuPrincipal.g.cs
+C:\Users\fkiah\OneDrive\Bureau\Net\TP1\CaissePoly\obj\Debug\net8.0-windows\admin\MenuPrincipale.g.cs
+C:\Users\fkiah\OneDrive\Bureau\Net\TP1\CaissePoly\obj\Debug\net8.0-windows\App.baml
+C:\Users\fkiah\OneDrive\Bureau\Net\TP1\CaissePoly\obj\Debug\net8.0-windows\admin\MenuPrincipal.baml
+C:\Users\fkiah\OneDrive\Bureau\Net\TP1\CaissePoly\obj\Debug\net8.0-windows\admin\MenuPrincipale.baml
+C:\Users\fkiah\OneDrive\Bureau\Net\TP1\CaissePoly\bin\Debug\net8.0-windows\FontAwesome.WPF.dll
+C:\Users\fkiah\OneDrive\Bureau\Net\TP1\CaissePoly\obj\Debug\net8.0-windows\admin\LoginAdmin.g.cs
+C:\Users\fkiah\OneDrive\Bureau\Net\TP1\CaissePoly\obj\Debug\net8.0-windows\admin\LoginAdmin.baml
+>>>>>>> 3d28a420ec77864c51d68e0eab32256f3f40fb59
+C:\Users\msi\source\repos\CaissePoly\CaissePoly\obj\Debug\net8.0-windows\admin\LoginAdmin.g.cs
+C:\Users\msi\source\repos\CaissePoly\CaissePoly\obj\Debug\net8.0-windows\admin\MenuPrincipal.g.cs
+C:\Users\msi\source\repos\CaissePoly\CaissePoly\obj\Debug\net8.0-windows\admin\MenuPrincipale.g.cs

@@ -1,0 +1,263 @@
+﻿<UserControl x:Class="CaissePoly.admin.MenuPrincipale"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:CaissePoly.admin"
+             xmlns:fa="clr-namespace:FontAwesome.WPF;assembly=FontAwesome.WPF"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <UserControl.Resources>
+        <!-- Définition des gradients -->
+        <LinearGradientBrush x:Key="BackgroundGradient" StartPoint="0,0" EndPoint="1,1">
+            <GradientStop Color="#667eea" Offset="0"/>
+            <GradientStop Color="#764ba2" Offset="1"/>
+        </LinearGradientBrush>
+
+        <LinearGradientBrush x:Key="VioletGradient" StartPoint="0,0" EndPoint="1,1">
+            <GradientStop Color="#8e44ad" Offset="0"/>
+            <GradientStop Color="#9b59b6" Offset="1"/>
+        </LinearGradientBrush>
+
+        <LinearGradientBrush x:Key="GreenGradient" StartPoint="0,0" EndPoint="1,1">
+            <GradientStop Color="#27ae60" Offset="0"/>
+            <GradientStop Color="#2ecc71" Offset="1"/>
+        </LinearGradientBrush>
+
+        <LinearGradientBrush x:Key="BlueGradient" StartPoint="0,0" EndPoint="1,1">
+            <GradientStop Color="#2980b9" Offset="0"/>
+            <GradientStop Color="#3498db" Offset="1"/>
+        </LinearGradientBrush>
+
+        <LinearGradientBrush x:Key="LightBlueGradient" StartPoint="0,0" EndPoint="1,1">
+            <GradientStop Color="#3498db" Offset="0"/>
+            <GradientStop Color="#5dade2" Offset="1"/>
+        </LinearGradientBrush>
+
+        <LinearGradientBrush x:Key="SkyGradient" StartPoint="0,0" EndPoint="1,1">
+            <GradientStop Color="#5dade2" Offset="0"/>
+            <GradientStop Color="#85c1e9" Offset="1"/>
+        </LinearGradientBrush>
+
+        <LinearGradientBrush x:Key="RedGradient" StartPoint="0,0" EndPoint="1,1">
+            <GradientStop Color="#e74c3c" Offset="0"/>
+            <GradientStop Color="#ec7063" Offset="1"/>
+        </LinearGradientBrush>
+
+        <LinearGradientBrush x:Key="NavyGradient" StartPoint="0,0" EndPoint="1,1">
+            <GradientStop Color="#34495e" Offset="0"/>
+            <GradientStop Color="#566573" Offset="1"/>
+        </LinearGradientBrush>
+
+        <LinearGradientBrush x:Key="TealGradient" StartPoint="0,0" EndPoint="1,1">
+            <GradientStop Color="#1abc9c" Offset="0"/>
+            <GradientStop Color="#48c9b0" Offset="1"/>
+        </LinearGradientBrush>
+
+        <LinearGradientBrush x:Key="CaisseGradient" StartPoint="0,0" EndPoint="1,1">
+            <GradientStop Color="#28a745" Offset="0"/>
+            <GradientStop Color="#20c997" Offset="1"/>
+        </LinearGradientBrush>
+
+        <!-- Style pour les tuiles -->
+        <Style x:Key="TileStyle" TargetType="Button">
+            <Setter Property="Background" Value="{StaticResource VioletGradient}"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="Height" Value="140"/>
+            <Setter Property="Margin" Value="7.5"/>
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border x:Name="border" 
+                                Background="{TemplateBinding Background}" 
+                                CornerRadius="15"
+                                RenderTransformOrigin="0.5,0.5">
+                            <Border.Effect>
+                                <DropShadowEffect Color="Black" ShadowDepth="4" BlurRadius="15" Opacity="0.2"/>
+                            </Border.Effect>
+                            <Border.RenderTransform>
+                                <ScaleTransform x:Name="scaleTransform"/>
+                            </Border.RenderTransform>
+                            <StackPanel Orientation="Vertical" 
+                                        HorizontalAlignment="Center" 
+                                        VerticalAlignment="Center">
+                                <fa:ImageAwesome x:Name="icon"
+                                                 Icon="{TemplateBinding Tag}"
+                                                 Foreground="White"
+                                                 Width="40"
+                                                 Height="40"
+                                                 HorizontalAlignment="Center"
+                                                 Margin="0,0,0,10"/>
+                                <TextBlock x:Name="text" 
+                                           Text="{TemplateBinding Content}" 
+                                           TextAlignment="Center" 
+                                           TextWrapping="Wrap"
+                                           FontSize="{TemplateBinding FontSize}"/>
+                            </StackPanel>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Trigger.EnterActions>
+                                    <BeginStoryboard>
+                                        <Storyboard>
+                                            <DoubleAnimation Storyboard.TargetName="scaleTransform" 
+                                                             Storyboard.TargetProperty="ScaleX" 
+                                                             To="1.02" Duration="0:0:0.2"/>
+                                            <DoubleAnimation Storyboard.TargetName="scaleTransform" 
+                                                             Storyboard.TargetProperty="ScaleY" 
+                                                             To="1.02" Duration="0:0:0.2"/>
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </Trigger.EnterActions>
+                                <Trigger.ExitActions>
+                                    <BeginStoryboard>
+                                        <Storyboard>
+                                            <DoubleAnimation Storyboard.TargetName="scaleTransform" 
+                                                             Storyboard.TargetProperty="ScaleX" 
+                                                             To="1.0" Duration="0:0:0.2"/>
+                                            <DoubleAnimation Storyboard.TargetName="scaleTransform" 
+                                                             Storyboard.TargetProperty="ScaleY" 
+                                                             To="1.0" Duration="0:0:0.2"/>
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </Trigger.ExitActions>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <!-- Style pour la caisse principale -->
+        <Style x:Key="CaisseMainStyle" TargetType="Button" BasedOn="{StaticResource TileStyle}">
+            <Setter Property="Background" Value="{StaticResource CaisseGradient}"/>
+            <Setter Property="Height" Value="180"/>
+            <Setter Property="Width" Value="250"/>
+            <Setter Property="FontSize" Value="18"/>
+            <Setter Property="BorderThickness" Value="3"/>
+            <Setter Property="BorderBrush">
+                <Setter.Value>
+                    <SolidColorBrush Color="White" Opacity="0.3"/>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <!-- Animations pour la caisse principale -->
+        <Storyboard x:Key="PulseAnimation" RepeatBehavior="Forever">
+            <DoubleAnimation Storyboard.TargetProperty="(UIElement.Effect).(DropShadowEffect.BlurRadius)"
+                             From="15" To="25" Duration="0:0:1" AutoReverse="True"/>
+            <ColorAnimation Storyboard.TargetProperty="(UIElement.Effect).(DropShadowEffect.Color)"
+                            From="Black" To="#28a745" Duration="0:0:1" AutoReverse="True"/>
+        </Storyboard>
+    </UserControl.Resources>
+
+    <Grid Background="{StaticResource BackgroundGradient}">
+        <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled">
+            <StackPanel Margin="20" MaxWidth="1400">
+                <!-- Titre principal -->
+                <TextBlock Text="Menu Principal" 
+                           FontSize="35" 
+                           FontWeight="Bold" 
+                           Foreground="White" 
+                           HorizontalAlignment="Center" 
+                           Margin="0,0,0,30">
+                    <TextBlock.Effect>
+                        <DropShadowEffect Color="Black" ShadowDepth="2" BlurRadius="4" Opacity="0.3"/>
+                    </TextBlock.Effect>
+                </TextBlock>
+
+                <!-- Grille principale des tuiles -->
+                <UniformGrid Columns="5" Margin="0,0,0,30">
+                    <!-- Articles -->
+
+                    <!-- Bon d'entrée et sortie -->
+                    <!-- Articles -->
+                    <Button Style="{StaticResource TileStyle}" 
+                            Background="{StaticResource VioletGradient}"
+                            Content="Articles"
+                            Tag="Cube"
+                            Click="OnArticlesClick"/>
+
+                    <!-- Bon d'entrée et sortie -->
+                    <Button Style="{StaticResource TileStyle}" 
+                            Background="{StaticResource GreenGradient}"
+                            Content="Bon d'entrée et de sortie"
+                            Tag="ExchangeAlt"
+                            Click="OnBonEntreeClick"/>
+
+                    <!-- Inventaire -->
+                    <Button Style="{StaticResource TileStyle}" 
+                            Background="{StaticResource LightBlueGradient}"
+                            Content="Inventaire"
+                            Tag="Boxes"
+                            Click="OnInventaireClick"/>
+
+                    <!-- Information -->
+                    <Button Style="{StaticResource TileStyle}" 
+                            Background="{StaticResource SkyGradient}"
+                            Content="Information"
+                            Tag="InfoCircle"
+                            Click="OnInformationClick"/>
+
+                    <!-- Fermer la caisse -->
+                    <Button Style="{StaticResource TileStyle}" 
+                            Background="{StaticResource RedGradient}"
+                            Content="Fermer la caisse"
+                            Tag="TimesCircle"
+                            Click="OnFermerCaisseClick"/>
+
+                    <!-- Famille -->
+                    <Button Style="{StaticResource TileStyle}" 
+                            Background="{StaticResource NavyGradient}"
+                            Content="Famille"
+                            Tag="Users"
+                            Click="OnFacturationClick"/>
+
+                    <!-- Utilisateurs -->
+                    <Button Style="{StaticResource TileStyle}" 
+                            Background="{StaticResource TealGradient}"
+                            Content="Utilisateurs"
+                            Tag="User"
+                            Click="OnUtilisateursClick"/>
+
+                    <!-- Contact -->
+                    <Button Style="{StaticResource TileStyle}" 
+                            Background="{StaticResource SkyGradient}"
+                            Content="Contact Polysoft&amp;CO"
+                            Tag="Envelope"
+                            Click="OnContactClick"/>
+
+                    <!-- Paramètre dossier -->
+                    <Button Style="{StaticResource TileStyle}" 
+                            Background="{StaticResource BlueGradient}"
+                            Content="Paramètre dossier"
+                            Tag="Cog"
+                            Click="OnParametreClick"/>
+                </UniformGrid>
+
+                <!-- Section caisse -->
+                <TextBlock Text="💰 Accès Caisse &amp; Fonctions Rapides" 
+                           FontSize="18" 
+                           Foreground="White" 
+                           HorizontalAlignment="Center" 
+                           Margin="0,0,0,15">
+                    <TextBlock.Effect>
+                        <DropShadowEffect Color="Black" ShadowDepth="1" BlurRadius="2" Opacity="0.3"/>
+                    </TextBlock.Effect>
+                </TextBlock>
+
+                <!-- Caisse principale -->
+                <Button x:Name="CaisseMainButton" 
+                        Style="{StaticResource CaisseMainStyle}"
+                        Content="CAISSE PRINCIPALE"
+                        Tag="CashRegister"
+                        Click="OnCaisseMainClick"
+                        Loaded="CaisseMainButton_Loaded"/>
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+</UserControl>

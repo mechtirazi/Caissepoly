@@ -60,7 +60,7 @@ namespace CaissePoly.Componnents {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/CaissePoly;component/componnents/searchbox.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/CaissePoly;V1.0.0.0;component/componnents/searchbox.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\Componnents\SearchBox.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

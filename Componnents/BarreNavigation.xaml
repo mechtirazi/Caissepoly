@@ -55,7 +55,8 @@
         <!-- Action Buttons -->
         <StackPanel Grid.Column="4" Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,10,0">
             <!-- Home Button -->
-            <Button Width="36" Height="36" Background="White" BorderBrush="#E2E8F0" BorderThickness="1" ToolTip="Accueil" Margin="0,0,10,0">
+            <Button Width="36" Height="36" Background="White" BorderBrush="#E2E8F0" BorderThickness="1" 
+                ToolTip="Accueil" Margin="0,0,10,0" Click="AccueilButton_Click">
                 <Viewbox Width="16" Height="16">
                     <Path Data="M5,10 L10,5 L15,10 L13,10 L13,15 L7,15 L7,10 Z" Fill="#334155"/>
                 </Viewbox>
