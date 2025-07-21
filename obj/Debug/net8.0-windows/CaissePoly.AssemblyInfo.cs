@@ -14,7 +14,11 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CaissePoly")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
+<<<<<<< HEAD
 [assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3d28a420ec77864c51d68e0eab32256f3f40fb59")]
+=======
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+db44dfd399cc200937d122aff294d455fac64ad9")]
+>>>>>>> 7a2250263f8a7cffba413434da6ee356dde00b96
 [assembly: System.Reflection.AssemblyProductAttribute("CaissePoly")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CaissePoly")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -1,8 +1,13 @@
 ﻿<Application x:Class="CaissePoly.App"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+<<<<<<< HEAD
+             xmlns:local="clr-namespace:CaissePoly"
+             StartupUri="FicheArticle.xaml">
+=======
              xmlns:local="clr-namespace:CaissePoly" 
              StartupUri="Login.xaml">
+>>>>>>> 3d28a420ec77864c51d68e0eab32256f3f40fb59
     <Application.Resources>
             <Style x:Key="TileButton" TargetType="Button">
                 <Setter Property="Margin" Value="10"/>
