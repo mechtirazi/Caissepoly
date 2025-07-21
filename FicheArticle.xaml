@@ -34,7 +34,7 @@ Background="Transparent"
 
         <!-- Titre principal -->
         <Border Grid.Row="1" Background="#A9D0F5" Padding="10">
-            <TextBlock Text="FICHE ARTICLE" FontSize="18" FontWeight="Bold" 
+            <TextBlock Text="FICHE ARTICLES" FontSize="18" FontWeight="Bold" 
                    Foreground="#2C3E50" VerticalAlignment="Center" 
                    HorizontalAlignment="Center" TextAlignment="Center"/>
         </Border>
