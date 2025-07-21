@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "eEtqszGvV9c=",
+  "dgSpecHash": "igQuY/JxefQ=",
   "success": true,
   "projectFilePath": "C:\\Users\\msi\\source\\repos\\CaissePoly\\CaissePoly\\CaissePoly.csproj",
   "expectedPackageFiles": [
@@ -87,16 +87,12 @@
   ],
   "logs": [
     {
-      "code": "Undefined",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Problème de lecture du fichier cache C:\\Users\\msi\\source\\repos\\CaissePoly\\CaissePoly\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
-    },
-    {
       "code": "NU1701",
       "level": "Warning",
-      "warningLevel": 1,
       "message": "Le package 'FontAwesome.WPF 4.7.0.9' a été restauré en utilisant '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' au lieu du framework cible du projet 'net8.0-windows7.0'. Ce package n'est peut-être pas totalement compatible avec votre projet.",
+      "projectPath": "C:\\Users\\msi\\source\\repos\\CaissePoly\\CaissePoly\\CaissePoly.csproj",
+      "warningLevel": 1,
+      "filePath": "C:\\Users\\msi\\source\\repos\\CaissePoly\\CaissePoly\\CaissePoly.csproj",
       "libraryId": "FontAwesome.WPF",
       "targetGraphs": [
         "net8.0-windows7.0"

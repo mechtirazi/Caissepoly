@@ -350,3 +350,8 @@ C:\Users\fkiah\OneDrive\Bureau\Net\TP1\CaissePoly\obj\Debug\net8.0-windows\admin
 C:\Users\msi\source\repos\CaissePoly\CaissePoly\obj\Debug\net8.0-windows\admin\LoginAdmin.g.cs
 C:\Users\msi\source\repos\CaissePoly\CaissePoly\obj\Debug\net8.0-windows\admin\MenuPrincipal.g.cs
 C:\Users\msi\source\repos\CaissePoly\CaissePoly\obj\Debug\net8.0-windows\admin\MenuPrincipale.g.cs
+C:\Users\msi\source\repos\CaissePoly\CaissePoly\bin\Debug\net8.0-windows\FontAwesome.WPF.dll
+C:\Users\msi\source\repos\CaissePoly\CaissePoly\obj\Debug\net8.0-windows\App.baml
+C:\Users\msi\source\repos\CaissePoly\CaissePoly\obj\Debug\net8.0-windows\admin\LoginAdmin.baml
+C:\Users\msi\source\repos\CaissePoly\CaissePoly\obj\Debug\net8.0-windows\admin\MenuPrincipal.baml
+C:\Users\msi\source\repos\CaissePoly\CaissePoly\obj\Debug\net8.0-windows\admin\MenuPrincipale.baml
