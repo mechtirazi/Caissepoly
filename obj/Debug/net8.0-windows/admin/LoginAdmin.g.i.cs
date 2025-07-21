@@ -69,7 +69,7 @@ namespace CaissePoly.admin {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/CaissePoly;V1.0.0.0;component/admin/loginadmin.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/CaissePoly;component/admin/loginadmin.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\admin\LoginAdmin.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

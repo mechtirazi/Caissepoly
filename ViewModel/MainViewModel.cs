@@ -17,6 +17,7 @@ namespace CaissePoly.ViewModel
 
         public ObservableCollection<Famille> Familles { get; set; }
         public ObservableCollection<int> ListeTickets { get; set; } = new();
+        public ObservableCollection<Article> Articles { get; set; } = new ObservableCollection<Article>();
 
         private Famille _selectedFamille;
         public Famille SelectedFamille
@@ -136,7 +137,28 @@ namespace CaissePoly.ViewModel
             get => _paiement;
             set { _paiement = value; OnPropertyChanged(); }
         }
-    
+        private bool _afficherFamilles;
+
+        public bool AfficherFamilles
+        {
+            get => _afficherFamilles;
+            set
+            {
+                _afficherFamilles = value;
+                OnPropertyChanged();
+                ChargerArticlesParFamille();
+            }
+        }
+        private Ticket _ticketActuel;
+        public Ticket TicketActuel
+        {
+            get => _ticketActuel;
+            set
+            {
+                _ticketActuel = value;
+                OnPropertyChanged(nameof(TicketActuel));
+            }
+        }
 
 
         public Action CloseWindowAction { get; set; }
@@ -155,19 +177,6 @@ namespace CaissePoly.ViewModel
         public ICommand CancelCommand { get; }
 
         public ICommand AfficherFamillesCommand { get; }
-
-        private bool _afficherFamilles;
-
-        public bool AfficherFamilles
-        {
-            get => _afficherFamilles;
-            set
-            {
-                _afficherFamilles = value;
-                OnPropertyChanged();
-                ChargerArticlesParFamille();
-            }
-        }
 
         public MainViewModel()
         {
@@ -253,33 +262,7 @@ namespace CaissePoly.ViewModel
             ValiderCommandeCommand = new RelayCommand(() =>
             {
                 RecalculerTotalTicket();
-
-                var nouveauTicket = new Ticket
-                {
-                    DateTicket = DateTime.Now,
-                    Total = TotalTicket,
-                };
-
-                foreach (var article in FilteredArticles)
-                {
-                    if (article.quantiteVente > 0)
-                    {
-                        var vente = new Vente
-                        {
-                            IdA = article.idA,
-                            Quantite = article.quantiteVente,
-                            PrixUnitaire = article.prixunitaire ?? 0,
-                            Article = article
-                        };
-                        nouveauTicket.Ventes.Add(vente);
-                    }
-                }
-
-                _context.Tickets.Add(nouveauTicket);
-                _context.SaveChanges();
-
-                MessageBox.Show($"✅ Commande validée. Total : {TotalTicket} Dinars");
-                FilteredArticles.Clear();
+                CreerNouveauTicket();
             });
 
             if (ListeTickets.Any())
@@ -325,7 +308,7 @@ namespace CaissePoly.ViewModel
                     MessageBox.Show("Aucun ticket sélectionné");
                 }
             });
-        }
+            }
 
         private void ChargerArticlesParFamille()
         {
@@ -418,6 +401,28 @@ namespace CaissePoly.ViewModel
         protected void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+        public void CreerNouveauTicket()
+        {
+            TicketActuel = new Ticket
+            {
+                DateTicket = DateTime.Now,
+                ModePaiement = null,
+                Total = 0
+            };
+
+            _context.Tickets.Add(TicketActuel);
+            _context.SaveChanges();
+
+            ListeTickets.Add(TicketActuel.IdT);
+            SelectedTicket = TicketActuel.IdT;
+
+            Articles.Clear();
+            FilteredArticles.Clear();
+
+            OnPropertyChanged(nameof(TicketActuel));
+            OnPropertyChanged(nameof(TotalTicket));
+            OnPropertyChanged(nameof(FilteredArticles));
         }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -46,7 +47,7 @@ namespace CaissePoly.Model
 
         [ForeignKey("idF")]
         public virtual Famille? famille { get; set; }
-
+        
         public virtual ICollection<Vente> Vente { get; set; } = new List<Vente>();
 
         public decimal Total => quantiteVente * (prixunitaire ?? 0);
@@ -63,5 +64,6 @@ namespace CaissePoly.Model
             quantiteStock = 0;
             quantiteVente = 0;
         }
+
     }
 }

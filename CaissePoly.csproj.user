@@ -7,6 +7,9 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
+    <Compile Update="admin\inventaire\inventaire.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="admin\LoginAdmin.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -48,6 +51,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Page Update="admin\inventaire\inventaire.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="admin\LoginAdmin.xaml">
       <SubType>Designer</SubType>
     </Page>

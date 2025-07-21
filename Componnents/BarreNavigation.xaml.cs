@@ -65,44 +65,49 @@ namespace CaissePoly.Componnents
 
         private void AccueilButton_Click(object sender, RoutedEventArgs e)
         {
-            var loginWindow = new LoginAdmin();
-            var result = loginWindow.ShowDialog();
+            
+                // Ouvrir la fenêtre de connexion
+                var loginWindow = new LoginAdmin();
+                var result = loginWindow.ShowDialog();
 
-            if (result == true && loginWindow.UtilisateurConnecte != null)
-            {
-                var utilisateur = loginWindow.UtilisateurConnecte;
-
-                // Vérifier que c'est bien un administrateur
-                if (utilisateur.Role == "Administrateur")
+                // Vérifier si la connexion est réussie et qu’un utilisateur est connecté
+                if (result == true && loginWindow.UtilisateurConnecte != null)
                 {
-                    // Chercher si une fenêtre avec MenuPrincipale est déjà ouverte
-                    foreach (Window window in Application.Current.Windows)
+                    var utilisateur = loginWindow.UtilisateurConnecte;
+
+                    // Vérifier que l'utilisateur a bien le rôle administrateur
+                    if (utilisateur.Role == "Administrateur")
                     {
-                        if (window.Content is CaissePoly.admin.MenuPrincipale)
+                        // Vérifier si la fenêtre MenuPrincipale est déjà ouverte
+                        foreach (Window window in Application.Current.Windows)
                         {
-                            window.Activate(); // Met cette fenêtre au premier plan
-                            Window.GetWindow(this)?.Close(); // Ferme la fenêtre actuelle
-                            return;
+                            if (window.Content is CaissePoly.admin.MenuPrincipale)
+                            {
+                                window.Activate(); // Mettre au premier plan
+                                Window.GetWindow(this)?.Close(); // Fermer la fenêtre actuelle (si besoin)
+                                return;
+                            }
                         }
+
+                        // Sinon, créer et afficher une nouvelle fenêtre MenuPrincipale
+                        var menuPrincipal = new Window
+                        {
+                            Title = "Menu Principal",
+                            Content = new CaissePoly.admin.MenuPrincipale(),
+                            Width = 800,
+                            Height = 600
+                        };
+                        menuPrincipal.Show();
+
+                        // Fermer la fenêtre actuelle
+                        Window.GetWindow(this)?.Close();
                     }
-
-                    // Sinon créer et afficher une nouvelle fenêtre MenuPrincipale
-                    var menuPrincipal = new Window
+                    else
                     {
-                        Title = "Menu Principal",
-                        Content = new CaissePoly.admin.MenuPrincipale(),
-                        Width = 800,
-                        Height = 600
-                    };
-                    menuPrincipal.Show();
-
-                    // Fermer la fenêtre actuelle
-                    Window.GetWindow(this)?.Close();
-                }
-                else
-                {
-                    MessageBox.Show("Accès refusé. Vous n'avez pas les droits administrateur.", "Accès refusé", MessageBoxButton.OK, MessageBoxImage.Warning);
-                }
+                        MessageBox.Show("Accès refusé. Vous n'avez pas les droits administrateur.",
+                                        "Accès refusé", MessageBoxButton.OK, MessageBoxImage.Warning);
+                    }
+                
             }
         }
 

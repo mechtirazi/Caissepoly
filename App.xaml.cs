@@ -1,4 +1,5 @@
-﻿using System.Configuration;
+﻿using CaissePoly.Model;
+using System.Configuration;
 using System.Data;
 using System.Windows;
 
@@ -9,6 +10,8 @@ namespace CaissePoly
     /// </summary>
     public partial class App : Application
     {
+        public static Utilisateur UtilisateurConnecte { get; set; }
+
     }
 
 }

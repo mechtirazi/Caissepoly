@@ -174,3 +174,5 @@ C:\Users\fkiah\OneDrive\Bureau\Net\TP1\CaissePoly\obj\Debug\net8.0-windows\admin
 C:\Users\fkiah\OneDrive\Bureau\Net\TP1\CaissePoly\bin\Debug\net8.0-windows\FontAwesome.WPF.dll
 C:\Users\fkiah\OneDrive\Bureau\Net\TP1\CaissePoly\obj\Debug\net8.0-windows\admin\LoginAdmin.g.cs
 C:\Users\fkiah\OneDrive\Bureau\Net\TP1\CaissePoly\obj\Debug\net8.0-windows\admin\LoginAdmin.baml
+C:\Users\fkiah\OneDrive\Bureau\Net\TP1\CaissePoly\obj\Debug\net8.0-windows\admin\inventaire\inventaire.g.cs
+C:\Users\fkiah\OneDrive\Bureau\Net\TP1\CaissePoly\obj\Debug\net8.0-windows\admin\inventaire\inventaire.baml

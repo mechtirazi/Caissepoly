@@ -24,7 +24,7 @@ namespace CaissePoly.Componnents
         public NumericPad()
         {
             InitializeComponent();
-           
+
 
 
         }
@@ -32,6 +32,36 @@ namespace CaissePoly.Componnents
         private void Button_Click(object sender, RoutedEventArgs e)
         {
 
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            // 🔐 Ouvre la fenêtre de login
+            var loginWindow = new CaissePoly.admin.LoginAdmin();
+            bool? result = loginWindow.ShowDialog();
+
+            if (result == true)
+            {
+                App.UtilisateurConnecte = loginWindow.UtilisateurConnecte;
+
+                // 🔒 Vérifie si c'est un administrateur
+                if (App.UtilisateurConnecte.Role?.ToLower() == "administrateur")
+                {
+                    // ✅ Création du ticket
+                    var viewModel = this.DataContext as MainViewModel; // Remplace par ton vrai ViewModel
+                    viewModel?.CreerNouveauTicket();
+
+                    MessageBox.Show("Ticket créé avec succès.", "Succès", MessageBoxButton.OK, MessageBoxImage.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Seul un administrateur peut créer un ticket.", "Accès refusé", MessageBoxButton.OK, MessageBoxImage.Warning);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Connexion annulée.", "Info", MessageBoxButton.OK, MessageBoxImage.Information);
+            }
         }
     }
 }

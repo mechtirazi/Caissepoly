@@ -68,7 +68,12 @@ namespace CaissePoly.admin
         private void OnInventaireClick(object sender, RoutedEventArgs e)
         {
             // Navigation vers la page inventaire
-            NavigateToPage("Inventaire");
+            var inventaireWindow = new inventaire.inventaire(); // ← tu dois avoir une classe InventaireWindow
+            inventaireWindow.Show();
+
+            // Optionnel : Fermer la fenêtre actuelle si c'est une Window (non un UserControl)
+            Window parentWindow = Window.GetWindow(this);
+            parentWindow?.Close();
         }
 
         private void OnInformationClick(object sender, RoutedEventArgs e)
