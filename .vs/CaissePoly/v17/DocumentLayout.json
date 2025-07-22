@@ -3,48 +3,31 @@
   "WorkspaceRootPath": "C:\\Users\\fkiah\\OneDrive\\Bureau\\Net\\TP1\\CaissePoly\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{EF103531-A2F5-4FA8-A2D1-837DD0F92058}|CaissePoly.csproj|c:\\users\\fkiah\\onedrive\\bureau\\net\\tp1\\caissepoly\\viewmodel\\mainviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EF103531-A2F5-4FA8-A2D1-837DD0F92058}|CaissePoly.csproj|solutionrelative:viewmodel\\mainviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{EF103531-A2F5-4FA8-A2D1-837DD0F92058}|CaissePoly.csproj|c:\\users\\fkiah\\onedrive\\bureau\\net\\tp1\\caissepoly\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{EF103531-A2F5-4FA8-A2D1-837DD0F92058}|CaissePoly.csproj|solutionrelative:app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EF103531-A2F5-4FA8-A2D1-837DD0F92058}|CaissePoly.csproj|c:\\users\\fkiah\\onedrive\\bureau\\net\\tp1\\caissepoly\\migrations\\20250722013533_fixventerelations.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EF103531-A2F5-4FA8-A2D1-837DD0F92058}|CaissePoly.csproj|solutionrelative:migrations\\20250722013533_fixventerelations.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EF103531-A2F5-4FA8-A2D1-837DD0F92058}|CaissePoly.csproj|c:\\users\\fkiah\\onedrive\\bureau\\net\\tp1\\caissepoly\\model\\vente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EF103531-A2F5-4FA8-A2D1-837DD0F92058}|CaissePoly.csproj|solutionrelative:model\\vente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EF103531-A2F5-4FA8-A2D1-837DD0F92058}|CaissePoly.csproj|c:\\users\\fkiah\\onedrive\\bureau\\net\\tp1\\caissepoly\\model\\ticket.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EF103531-A2F5-4FA8-A2D1-837DD0F92058}|CaissePoly.csproj|solutionrelative:model\\ticket.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EF103531-A2F5-4FA8-A2D1-837DD0F92058}|CaissePoly.csproj|c:\\users\\fkiah\\onedrive\\bureau\\net\\tp1\\caissepoly\\componnents\\articlelist.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{EF103531-A2F5-4FA8-A2D1-837DD0F92058}|CaissePoly.csproj|solutionrelative:componnents\\articlelist.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EF103531-A2F5-4FA8-A2D1-837DD0F92058}|CaissePoly.csproj|c:\\users\\fkiah\\onedrive\\bureau\\net\\tp1\\caissepoly\\componnents\\numeroticketprix.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{EF103531-A2F5-4FA8-A2D1-837DD0F92058}|CaissePoly.csproj|solutionrelative:componnents\\numeroticketprix.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EF103531-A2F5-4FA8-A2D1-837DD0F92058}|CaissePoly.csproj|c:\\users\\fkiah\\onedrive\\bureau\\net\\tp1\\caissepoly\\componnents\\numericpad.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{EF103531-A2F5-4FA8-A2D1-837DD0F92058}|CaissePoly.csproj|solutionrelative:componnents\\numericpad.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EF103531-A2F5-4FA8-A2D1-837DD0F92058}|CaissePoly.csproj|c:\\users\\fkiah\\onedrive\\bureau\\net\\tp1\\caissepoly\\componnents\\boutton\\espece.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{EF103531-A2F5-4FA8-A2D1-837DD0F92058}|CaissePoly.csproj|solutionrelative:componnents\\boutton\\espece.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EF103531-A2F5-4FA8-A2D1-837DD0F92058}|CaissePoly.csproj|c:\\users\\fkiah\\onedrive\\bureau\\net\\tp1\\caissepoly\\app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EF103531-A2F5-4FA8-A2D1-837DD0F92058}|CaissePoly.csproj|solutionrelative:app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Program Files\\dotnet\\sdk\\9.0.102\\Sdks\\Microsoft.NET.Sdk\\targets\\Microsoft.PackageDependencyResolution.targets||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
     {
       "AbsoluteMoniker": "D:0:0:{EF103531-A2F5-4FA8-A2D1-837DD0F92058}|CaissePoly.csproj|c:\\users\\fkiah\\onedrive\\bureau\\net\\tp1\\caissepoly\\admin\\inventaire\\inventaire.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{EF103531-A2F5-4FA8-A2D1-837DD0F92058}|CaissePoly.csproj|solutionrelative:admin\\inventaire\\inventaire.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{EF103531-A2F5-4FA8-A2D1-837DD0F92058}|CaissePoly.csproj|c:\\users\\fkiah\\onedrive\\bureau\\net\\tp1\\caissepoly\\componnents\\numericpad.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{EF103531-A2F5-4FA8-A2D1-837DD0F92058}|CaissePoly.csproj|solutionrelative:componnents\\numericpad.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{EF103531-A2F5-4FA8-A2D1-837DD0F92058}|CaissePoly.csproj|c:\\users\\fkiah\\onedrive\\bureau\\net\\tp1\\caissepoly\\componnents\\barrenavigation.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{EF103531-A2F5-4FA8-A2D1-837DD0F92058}|CaissePoly.csproj|solutionrelative:componnents\\barrenavigation.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EF103531-A2F5-4FA8-A2D1-837DD0F92058}|CaissePoly.csproj|c:\\users\\fkiah\\onedrive\\bureau\\net\\tp1\\caissepoly\\viewmodel\\mainviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EF103531-A2F5-4FA8-A2D1-837DD0F92058}|CaissePoly.csproj|solutionrelative:viewmodel\\mainviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EF103531-A2F5-4FA8-A2D1-837DD0F92058}|CaissePoly.csproj|c:\\users\\fkiah\\onedrive\\bureau\\net\\tp1\\caissepoly\\componnents\\numericpad.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EF103531-A2F5-4FA8-A2D1-837DD0F92058}|CaissePoly.csproj|solutionrelative:componnents\\numericpad.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{EF103531-A2F5-4FA8-A2D1-837DD0F92058}|CaissePoly.csproj|c:\\users\\fkiah\\onedrive\\bureau\\net\\tp1\\caissepoly\\componnents\\barrenavigation.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -59,6 +42,10 @@
       "RelativeMoniker": "D:0:0:{EF103531-A2F5-4FA8-A2D1-837DD0F92058}|CaissePoly.csproj|solutionrelative:admin\\loginadmin.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{EF103531-A2F5-4FA8-A2D1-837DD0F92058}|CaissePoly.csproj|c:\\users\\fkiah\\onedrive\\bureau\\net\\tp1\\caissepoly\\componnents\\numeroticketprix.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{EF103531-A2F5-4FA8-A2D1-837DD0F92058}|CaissePoly.csproj|solutionrelative:componnents\\numeroticketprix.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{EF103531-A2F5-4FA8-A2D1-837DD0F92058}|CaissePoly.csproj|c:\\users\\fkiah\\onedrive\\bureau\\net\\tp1\\caissepoly\\componnents\\famillelist.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{EF103531-A2F5-4FA8-A2D1-837DD0F92058}|CaissePoly.csproj|solutionrelative:componnents\\famillelist.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     }
@@ -70,123 +57,71 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 7,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "20250722013533_FixVenteRelations.cs",
-              "DocumentMoniker": "C:\\Users\\fkiah\\OneDrive\\Bureau\\Net\\TP1\\CaissePoly\\Migrations\\20250722013533_FixVenteRelations.cs",
-              "RelativeDocumentMoniker": "Migrations\\20250722013533_FixVenteRelations.cs",
-              "ToolTip": "C:\\Users\\fkiah\\OneDrive\\Bureau\\Net\\TP1\\CaissePoly\\Migrations\\20250722013533_FixVenteRelations.cs",
-              "RelativeToolTip": "Migrations\\20250722013533_FixVenteRelations.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAABFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-22T01:35:34.105Z",
+              "Title": "Microsoft.PackageDependencyResolution.targets",
+              "DocumentMoniker": "C:\\Program Files\\dotnet\\sdk\\9.0.102\\Sdks\\Microsoft.NET.Sdk\\targets\\Microsoft.PackageDependencyResolution.targets",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\..\\..\\Program Files\\dotnet\\sdk\\9.0.102\\Sdks\\Microsoft.NET.Sdk\\targets\\Microsoft.PackageDependencyResolution.targets",
+              "ToolTip": "C:\\Program Files\\dotnet\\sdk\\9.0.102\\Sdks\\Microsoft.NET.Sdk\\targets\\Microsoft.PackageDependencyResolution.targets",
+              "RelativeToolTip": "..\\..\\..\\..\\..\\..\\..\\Program Files\\dotnet\\sdk\\9.0.102\\Sdks\\Microsoft.NET.Sdk\\targets\\Microsoft.PackageDependencyResolution.targets",
+              "ViewState": "AgIAAPwAAAAAAAAAAAAiwAkBAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003801|",
+              "WhenOpened": "2025-07-22T02:15:07.518Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Ticket.cs",
-              "DocumentMoniker": "C:\\Users\\fkiah\\OneDrive\\Bureau\\Net\\TP1\\CaissePoly\\Model\\Ticket.cs",
-              "RelativeDocumentMoniker": "Model\\Ticket.cs",
-              "ToolTip": "C:\\Users\\fkiah\\OneDrive\\Bureau\\Net\\TP1\\CaissePoly\\Model\\Ticket.cs",
-              "RelativeToolTip": "Model\\Ticket.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAA8AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-22T01:12:26.44Z",
+              "DocumentIndex": 0,
+              "Title": "App.xaml",
+              "DocumentMoniker": "C:\\Users\\fkiah\\OneDrive\\Bureau\\Net\\TP1\\CaissePoly\\App.xaml",
+              "RelativeDocumentMoniker": "App.xaml",
+              "ToolTip": "C:\\Users\\fkiah\\OneDrive\\Bureau\\Net\\TP1\\CaissePoly\\App.xaml",
+              "RelativeToolTip": "App.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-07-22T02:14:46.06Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "Vente.cs",
-              "DocumentMoniker": "C:\\Users\\fkiah\\OneDrive\\Bureau\\Net\\TP1\\CaissePoly\\Model\\Vente.cs",
-              "RelativeDocumentMoniker": "Model\\Vente.cs",
-              "ToolTip": "C:\\Users\\fkiah\\OneDrive\\Bureau\\Net\\TP1\\CaissePoly\\Model\\Vente.cs",
-              "RelativeToolTip": "Model\\Vente.cs",
-              "ViewState": "AgIAABAAAAAAAAAAAAAmwBoAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-22T01:33:24.141Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "ArticleList.xaml",
-              "DocumentMoniker": "C:\\Users\\fkiah\\OneDrive\\Bureau\\Net\\TP1\\CaissePoly\\Componnents\\ArticleList.xaml",
-              "RelativeDocumentMoniker": "Componnents\\ArticleList.xaml",
-              "ToolTip": "C:\\Users\\fkiah\\OneDrive\\Bureau\\Net\\TP1\\CaissePoly\\Componnents\\ArticleList.xaml",
-              "RelativeToolTip": "Componnents\\ArticleList.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-07-22T01:02:58.039Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "Espece.xaml",
-              "DocumentMoniker": "C:\\Users\\fkiah\\OneDrive\\Bureau\\Net\\TP1\\CaissePoly\\Componnents\\boutton\\Espece.xaml",
-              "RelativeDocumentMoniker": "Componnents\\boutton\\Espece.xaml",
-              "ToolTip": "C:\\Users\\fkiah\\OneDrive\\Bureau\\Net\\TP1\\CaissePoly\\Componnents\\boutton\\Espece.xaml",
-              "RelativeToolTip": "Componnents\\boutton\\Espece.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-07-22T00:38:45.975Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "App.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\fkiah\\OneDrive\\Bureau\\Net\\TP1\\CaissePoly\\App.xaml.cs",
-              "RelativeDocumentMoniker": "App.xaml.cs",
-              "ToolTip": "C:\\Users\\fkiah\\OneDrive\\Bureau\\Net\\TP1\\CaissePoly\\App.xaml.cs",
-              "RelativeToolTip": "App.xaml.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAASAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-21T15:46:10.825Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
               "Title": "inventaire.xaml",
               "DocumentMoniker": "C:\\Users\\fkiah\\OneDrive\\Bureau\\Net\\TP1\\CaissePoly\\admin\\inventaire\\inventaire.xaml",
               "RelativeDocumentMoniker": "admin\\inventaire\\inventaire.xaml",
               "ToolTip": "C:\\Users\\fkiah\\OneDrive\\Bureau\\Net\\TP1\\CaissePoly\\admin\\inventaire\\inventaire.xaml",
               "RelativeToolTip": "admin\\inventaire\\inventaire.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-07-21T13:31:54.291Z"
+              "WhenOpened": "2025-07-21T13:31:54.291Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 5,
               "Title": "MainViewModel.cs",
               "DocumentMoniker": "C:\\Users\\fkiah\\OneDrive\\Bureau\\Net\\TP1\\CaissePoly\\ViewModel\\MainViewModel.cs",
               "RelativeDocumentMoniker": "ViewModel\\MainViewModel.cs",
               "ToolTip": "C:\\Users\\fkiah\\OneDrive\\Bureau\\Net\\TP1\\CaissePoly\\ViewModel\\MainViewModel.cs",
               "RelativeToolTip": "ViewModel\\MainViewModel.cs",
-              "ViewState": "AgIAAOgBAAAAAAAAAAAUwO4BAAArAAAAAAAAAA==",
+              "ViewState": "AgIAAO0AAAAAAAAAAAAIwPcAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-21T12:12:29.271Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-21T12:12:29.271Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 3,
               "Title": "NumericPad.xaml",
               "DocumentMoniker": "C:\\Users\\fkiah\\OneDrive\\Bureau\\Net\\TP1\\CaissePoly\\Componnents\\NumericPad.xaml",
               "RelativeDocumentMoniker": "Componnents\\NumericPad.xaml",
               "ToolTip": "C:\\Users\\fkiah\\OneDrive\\Bureau\\Net\\TP1\\CaissePoly\\Componnents\\NumericPad.xaml",
               "RelativeToolTip": "Componnents\\NumericPad.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-07-21T12:10:50.104Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-21T12:10:50.104Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 9,
               "Title": "LoginAdmin.xaml.cs",
               "DocumentMoniker": "C:\\Users\\fkiah\\OneDrive\\Bureau\\Net\\TP1\\CaissePoly\\admin\\LoginAdmin.xaml.cs",
               "RelativeDocumentMoniker": "admin\\LoginAdmin.xaml.cs",
@@ -198,7 +133,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 8,
               "Title": "LoginAdmin.xaml",
               "DocumentMoniker": "C:\\Users\\fkiah\\OneDrive\\Bureau\\Net\\TP1\\CaissePoly\\admin\\LoginAdmin.xaml",
               "RelativeDocumentMoniker": "admin\\LoginAdmin.xaml",
@@ -209,7 +144,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 11,
               "Title": "FamilleList.xaml",
               "DocumentMoniker": "C:\\Users\\fkiah\\OneDrive\\Bureau\\Net\\TP1\\CaissePoly\\Componnents\\FamilleList.xaml",
               "RelativeDocumentMoniker": "Componnents\\FamilleList.xaml",
@@ -220,7 +155,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 7,
               "Title": "BarreNavigation.xaml.cs",
               "DocumentMoniker": "C:\\Users\\fkiah\\OneDrive\\Bureau\\Net\\TP1\\CaissePoly\\Componnents\\BarreNavigation.xaml.cs",
               "RelativeDocumentMoniker": "Componnents\\BarreNavigation.xaml.cs",
@@ -232,7 +167,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 4,
               "Title": "BarreNavigation.xaml",
               "DocumentMoniker": "C:\\Users\\fkiah\\OneDrive\\Bureau\\Net\\TP1\\CaissePoly\\Componnents\\BarreNavigation.xaml",
               "RelativeDocumentMoniker": "Componnents\\BarreNavigation.xaml",
@@ -243,15 +178,26 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 10,
               "Title": "NumeroTicketPrix.xaml",
               "DocumentMoniker": "C:\\Users\\fkiah\\OneDrive\\Bureau\\Net\\TP1\\CaissePoly\\Componnents\\NumeroTicketPrix.xaml",
               "RelativeDocumentMoniker": "Componnents\\NumeroTicketPrix.xaml",
               "ToolTip": "C:\\Users\\fkiah\\OneDrive\\Bureau\\Net\\TP1\\CaissePoly\\Componnents\\NumeroTicketPrix.xaml",
               "RelativeToolTip": "Componnents\\NumeroTicketPrix.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-07-21T12:10:05.267Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-21T12:10:05.267Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "NumericPad.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\fkiah\\OneDrive\\Bureau\\Net\\TP1\\CaissePoly\\Componnents\\NumericPad.xaml.cs",
+              "RelativeDocumentMoniker": "Componnents\\NumericPad.xaml.cs",
+              "ToolTip": "C:\\Users\\fkiah\\OneDrive\\Bureau\\Net\\TP1\\CaissePoly\\Componnents\\NumericPad.xaml.cs",
+              "RelativeToolTip": "Componnents\\NumericPad.xaml.cs",
+              "ViewState": "AgIAACQAAAAAAAAAAAAywCYAAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-21T11:56:58.994Z"
             }
           ]
         }
