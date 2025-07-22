@@ -63,5 +63,10 @@ namespace CaissePoly.Componnents
                 MessageBox.Show("Connexion annulée.", "Info", MessageBoxButton.OK, MessageBoxImage.Information);
             }
         }
+
+        private void Button_Click_2()
+        {
+
+        }
     }
 }

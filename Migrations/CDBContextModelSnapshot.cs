@@ -128,10 +128,10 @@ namespace CaissePoly.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("IdV"));
 
-                    b.Property<int>("ArticleidA")
+                    b.Property<int>("IdA")
                         .HasColumnType("int");
 
-                    b.Property<int>("IdA")
+                    b.Property<int>("IdT")
                         .HasColumnType("int");
 
                     b.Property<decimal>("PrixUnitaire")
@@ -140,17 +140,14 @@ namespace CaissePoly.Migrations
                     b.Property<int>("Quantite")
                         .HasColumnType("int");
 
-                    b.Property<int?>("TicketIdT")
-                        .HasColumnType("int");
-
                     b.Property<int?>("UtilisateuridU")
                         .HasColumnType("int");
 
                     b.HasKey("IdV");
 
-                    b.HasIndex("ArticleidA");
+                    b.HasIndex("IdA");
 
-                    b.HasIndex("TicketIdT");
+                    b.HasIndex("IdT");
 
                     b.HasIndex("UtilisateuridU");
 
@@ -170,19 +167,23 @@ namespace CaissePoly.Migrations
                 {
                     b.HasOne("CaissePoly.Model.Article", "Article")
                         .WithMany("Vente")
-                        .HasForeignKey("ArticleidA")
+                        .HasForeignKey("IdA")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Ticket", null)
+                    b.HasOne("Ticket", "Ticket")
                         .WithMany("Ventes")
-                        .HasForeignKey("TicketIdT");
+                        .HasForeignKey("IdT")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.HasOne("CaissePoly.Model.Utilisateur", null)
                         .WithMany("Vente")
                         .HasForeignKey("UtilisateuridU");
 
                     b.Navigation("Article");
+
+                    b.Navigation("Ticket");
                 });
 
             modelBuilder.Entity("CaissePoly.Model.Article", b =>

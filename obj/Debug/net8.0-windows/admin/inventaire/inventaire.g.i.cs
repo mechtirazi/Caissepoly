@@ -61,7 +61,7 @@ namespace CaissePoly.admin.inventaire {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/CaissePoly;V1.0.0.0;component/admin/inventaire/inventaire.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/CaissePoly;component/admin/inventaire/inventaire.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\..\admin\inventaire\inventaire.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

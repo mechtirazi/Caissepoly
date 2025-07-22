@@ -1,4 +1,5 @@
 ﻿using CaissePoly.Model;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -73,9 +74,10 @@ namespace CaissePoly.ViewModel
             {
                 _selectedTicket = value;
                 OnPropertyChanged();
-                UpdateTicketInfo();
+                ChargerTicketActuel(_selectedTicket);
             }
         }
+
 
         private ObservableCollection<Article> _filteredArticles = new();
         public ObservableCollection<Article> FilteredArticles
@@ -125,11 +127,18 @@ namespace CaissePoly.ViewModel
             }
         }
 
-        private decimal _totalTicket;
+        private decimal totalTicket;
         public decimal TotalTicket
         {
-            get => _totalTicket;
-            set { _totalTicket = value; OnPropertyChanged(); }
+            get => totalTicket;
+            set
+            {
+                if (totalTicket != value)
+                {
+                    totalTicket = value;
+                    OnPropertyChanged(nameof(TotalTicket));
+                }
+            }
         }
         private string _paiement;
         public string Paiement
@@ -214,7 +223,9 @@ namespace CaissePoly.ViewModel
                     _context.Article.Update(SelectedArticle);
                     _context.SaveChanges();
                     ValeurSaisie = "";
+                    RecalculerTotalTicket();
                 }
+
             });
             SearchCommand = new RelayCommand(() =>
             {
@@ -262,8 +273,63 @@ namespace CaissePoly.ViewModel
             ValiderCommandeCommand = new RelayCommand(() =>
             {
                 RecalculerTotalTicket();
+
+                // Si TicketActuel n'existe pas, on le crée
+                if (TicketActuel == null)
+                {
+                    TicketActuel = new Ticket
+                    {
+                        DateTicket = DateTime.Now,
+                        Ventes = new List<Vente>() // s'assurer qu'il est prêt à recevoir des ventes
+                    };
+                }
+
+                // Ajouter les ventes au ticket actuel
+                foreach (var article in FilteredArticles)
+                {
+                    if (article.quantiteVente > 0)
+                    {
+                        var vente = new Vente
+                        {
+                            IdA = article.idA,
+                            Quantite = article.quantiteVente,
+                            PrixUnitaire = article.prixunitaire ?? 0,
+                            Article = article,
+                            Ticket = TicketActuel
+                        };
+
+                        TicketActuel.Ventes.Add(vente);
+                    }
+                }
+
+                TicketActuel.Total = TotalTicket;
+
+                // Sauvegarder uniquement si le ticket n'est pas déjà dans la base
+                if (_context.Entry(TicketActuel).State == EntityState.Detached)
+                {
+                    _context.Tickets.Add(TicketActuel);
+                }
+
+                _context.SaveChanges();
+
+                MessageBox.Show($"✅ Commande validée. Total : {TotalTicket:F3} Dinars");
+
+                // Nettoyer les articles
+                FilteredArticles.Clear();
+                OnPropertyChanged(nameof(FilteredArticles));
+                OnPropertyChanged(nameof(TotalTicket));
+
+                // Préparer un nouveau ticket vide (sans enregistrer pour l'instant)
+                TicketActuel = new Ticket
+                {
+                    DateTicket = DateTime.Now,
+                    Ventes = new List<Vente>()
+                };
                 CreerNouveauTicket();
             });
+
+
+
 
             if (ListeTickets.Any())
             {
@@ -368,6 +434,7 @@ namespace CaissePoly.ViewModel
         private void RecalculerTotalTicket()
         {
             TotalTicket = FilteredArticles.Sum(a => a.Total);
+
         }
         public void ValiderPaiementEnEspece()
         {
@@ -386,15 +453,14 @@ namespace CaissePoly.ViewModel
 
         private void Article_PropertyChanged(object sender, PropertyChangedEventArgs e)
         {
-            if (e.PropertyName == nameof(Article.quantiteVente))
-            {
-                var article = sender as Article;
-                if (article != null)
+            
+                if (e.PropertyName == nameof(Article.quantiteVente) || e.PropertyName == nameof(Article.Total))
                 {
-                    _context.Article.Update(article);
+                    RecalculerTotalTicket(); // Recalculer le total à chaque changement important
+                    _context.Article.Update(sender as Article);
                     _context.SaveChanges();
                 }
-            }
+            
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
@@ -423,6 +489,34 @@ namespace CaissePoly.ViewModel
             OnPropertyChanged(nameof(TicketActuel));
             OnPropertyChanged(nameof(TotalTicket));
             OnPropertyChanged(nameof(FilteredArticles));
+        }
+        private void ChargerTicketActuel(int idTicket)
+        {
+            TicketActuel = _context.Tickets
+                .Include(t => t.Ventes) 
+                .ThenInclude(v => v.Article)
+                .FirstOrDefault(t => t.IdT == idTicket);
+
+            if (TicketActuel == null)
+            {
+                // Si pas trouvé, crée un ticket vide (optionnel)
+                TicketActuel = new Ticket
+                {
+                    DateTicket = DateTime.Now,
+                    Ventes = new List<Vente>()
+                };
+            }
+
+            // Met à jour les articles filtrés en fonction des ventes actuelles
+            FilteredArticles.Clear();
+            foreach (var vente in TicketActuel.Ventes)
+            {
+                var article = vente.Article;
+                article.quantiteVente = vente.Quantite;
+                FilteredArticles.Add(article);
+            }
+
+            RecalculerTotalTicket();
         }
     }
 }

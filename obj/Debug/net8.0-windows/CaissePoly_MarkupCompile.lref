@@ -1,5 +1,7 @@
 ﻿
 FC:\Users\fkiah\OneDrive\Bureau\Net\TP1\CaissePoly\App.xaml;;
+FC:\Users\fkiah\OneDrive\Bureau\Net\TP1\CaissePoly\admin\inventaire\inventaire.xaml;;
+FC:\Users\fkiah\OneDrive\Bureau\Net\TP1\CaissePoly\admin\LoginAdmin.xaml;;
 FC:\Users\fkiah\OneDrive\Bureau\Net\TP1\CaissePoly\admin\MenuPrincipal.xaml;;
 FC:\Users\fkiah\OneDrive\Bureau\Net\TP1\CaissePoly\admin\MenuPrincipale.xaml;;
 FC:\Users\fkiah\OneDrive\Bureau\Net\TP1\CaissePoly\Componnents\ArticleList.xaml;;
@@ -7,9 +9,8 @@ FC:\Users\fkiah\OneDrive\Bureau\Net\TP1\CaissePoly\Componnents\boutton\Espece.xa
 FC:\Users\fkiah\OneDrive\Bureau\Net\TP1\CaissePoly\Componnents\FamilleList.xaml;;
 FC:\Users\fkiah\OneDrive\Bureau\Net\TP1\CaissePoly\Componnents\NumericPad.xaml;;
 FC:\Users\fkiah\OneDrive\Bureau\Net\TP1\CaissePoly\espece.xaml;;
+FC:\Users\fkiah\OneDrive\Bureau\Net\TP1\CaissePoly\FicheArticle.xaml;;
 FC:\Users\fkiah\OneDrive\Bureau\Net\TP1\CaissePoly\Login.xaml;;
 FC:\Users\fkiah\OneDrive\Bureau\Net\TP1\CaissePoly\MainWindow.xaml;;
 FC:\Users\fkiah\OneDrive\Bureau\Net\TP1\CaissePoly\Views\CaisseView.xaml;;
-FC:\Users\fkiah\OneDrive\Bureau\Net\TP1\CaissePoly\admin\LoginAdmin.xaml;;
-FC:\Users\fkiah\OneDrive\Bureau\Net\TP1\CaissePoly\admin\inventaire\inventaire.xaml;;
 

@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET8_0;NETCOREAPP
 C:\Users\fkiah\OneDrive\Bureau\Net\TP1\CaissePoly\App.xaml
-151509669164
+16-1206099945
 
-36751498557
+40-1637367583
 229-1929115321
-admin\inventaire\inventaire.xaml;admin\LoginAdmin.xaml;admin\MenuPrincipal.xaml;admin\MenuPrincipale.xaml;Componnents\ArticleList.xaml;Componnents\BarreNavigation.xaml;Componnents\boutton\Espece.xaml;Componnents\FamilleList.xaml;Componnents\NumericPad.xaml;Componnents\NumeroTicketPrix.xaml;Componnents\SearchBox.xaml;espece.xaml;Login.xaml;MainWindow.xaml;Views\CaisseView.xaml;
+admin\inventaire\inventaire.xaml;admin\LoginAdmin.xaml;admin\MenuPrincipal.xaml;admin\MenuPrincipale.xaml;Componnents\ArticleList.xaml;Componnents\BarreNavigation.xaml;Componnents\boutton\Espece.xaml;Componnents\FamilleList.xaml;Componnents\NumericPad.xaml;Componnents\NumeroTicketPrix.xaml;Componnents\SearchBox.xaml;espece.xaml;FicheArticle.xaml;Login.xaml;MainWindow.xaml;Views\CaisseView.xaml;
 
 False
 
