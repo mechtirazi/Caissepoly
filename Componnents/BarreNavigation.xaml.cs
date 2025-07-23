@@ -65,28 +65,44 @@ namespace CaissePoly.Componnents
 
         private void AccueilButton_Click(object sender, RoutedEventArgs e)
         {
+            // S'il est déjà connecté comme administrateur
+            if (SessionManager.UtilisateurConnecte != null && SessionManager.UtilisateurConnecte.Role == "administrateur")
+            {
+                // Chercher si une fenêtre avec MenuPrincipale est déjà ouverte
+                foreach (Window window in Application.Current.Windows)
+                {
+                    if (window.Content is CaissePoly.admin.MenuPrincipale)
+                    {
+                        window.Activate();
+                        Window.GetWindow(this)?.Close();
+                        return;
+                    }
+                }
+
+                // Sinon, ouvrir la fenêtre MenuPrincipale
+                var menuPrincipal = new Window
+                {
+                    Title = "Menu Principal",
+                    Content = new CaissePoly.admin.MenuPrincipale(),
+                    Width = 800,
+                    Height = 600
+                };
+                menuPrincipal.Show();
+                Window.GetWindow(this)?.Close();
+                return;
+            }
+
+            // Sinon, demander de se connecter
             var loginWindow = new LoginAdmin();
             var result = loginWindow.ShowDialog();
 
             if (result == true && loginWindow.UtilisateurConnecte != null)
             {
                 var utilisateur = loginWindow.UtilisateurConnecte;
+                SessionManager.UtilisateurConnecte = utilisateur;
 
-                // Vérifier que c'est bien un administrateur
-                if (utilisateur.Role == "Administrateur")
+                if (utilisateur.Role == "administrateur")
                 {
-                    // Chercher si une fenêtre avec MenuPrincipale est déjà ouverte
-                    foreach (Window window in Application.Current.Windows)
-                    {
-                        if (window.Content is CaissePoly.admin.MenuPrincipale)
-                        {
-                            window.Activate(); // Met cette fenêtre au premier plan
-                            Window.GetWindow(this)?.Close(); // Ferme la fenêtre actuelle
-                            return;
-                        }
-                    }
-
-                    // Sinon créer et afficher une nouvelle fenêtre MenuPrincipale
                     var menuPrincipal = new Window
                     {
                         Title = "Menu Principal",
@@ -95,8 +111,6 @@ namespace CaissePoly.Componnents
                         Height = 600
                     };
                     menuPrincipal.Show();
-
-                    // Fermer la fenêtre actuelle
                     Window.GetWindow(this)?.Close();
                 }
                 else
@@ -105,6 +119,7 @@ namespace CaissePoly.Componnents
                 }
             }
         }
+
 
     }
 }

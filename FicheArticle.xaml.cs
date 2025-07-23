@@ -1,4 +1,5 @@
-﻿using CaissePoly.ViewModel;
+﻿using CaissePoly.admin;
+using CaissePoly.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,6 +25,33 @@ namespace CaissePoly
         {
             InitializeComponent();
             this.DataContext = new FicheArticleViewModel();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            var existingWindow = Application.Current.Windows
+                    .OfType<MenuPrincipal >()
+                    .FirstOrDefault();
+
+            if (existingWindow != null)
+            {
+                // Si trouvée, on la met au premier plan
+                if (existingWindow.WindowState == WindowState.Minimized)
+                    existingWindow.WindowState = WindowState.Normal;
+                existingWindow.Activate();
+            }
+            else
+            {
+                // Sinon, on crée et on affiche une nouvelle fenêtre
+                MenuPrincipal mainWindow = new MenuPrincipal();
+                this.Close();
+                mainWindow.Show();
+            }
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

@@ -71,6 +71,22 @@ namespace CaissePoly.ViewModel
             set
             {
                 _selectedTicket = value;
+                if (SelectedTicket == ListeTickets.Last()+1 && estonloading)
+                {
+                    IsReadOnly = true;
+                    estonloading = !estonloading;
+
+                }
+                else if (SelectedTicket == ListeTickets.Last() && !estonloading)
+                {
+                    IsReadOnly = true;
+                }
+                else
+                {
+                    IsReadOnly = false;
+                }
+                FilteredArticles.Clear();
+
                 OnPropertyChanged();
                 UpdateTicketInfo();
             }
@@ -101,7 +117,9 @@ namespace CaissePoly.ViewModel
             set
             {
                 _selectedArticle = value;
+                RecalculerTotalTicket();
                 OnPropertyChanged();
+
             }
         }
 
@@ -116,9 +134,11 @@ namespace CaissePoly.ViewModel
 
                 if (SelectedArticle != null && int.TryParse(_valeurSaisie, out int quantite))
                 {
+                    if (!IsReadOnly) return;
                     SelectedArticle.quantiteVente = quantite;
                     _context.Article.Update(SelectedArticle);
                     _context.SaveChanges();
+                    RecalculerTotalTicket();
                     OnPropertyChanged(nameof(SelectedArticle));
                 }
             }
@@ -168,9 +188,11 @@ namespace CaissePoly.ViewModel
                 ChargerArticlesParFamille();
             }
         }
-
+        public bool estonloading;
         public MainViewModel()
         {
+            estonloading = true ; 
+            IsReadOnly = true;
             _context.Database.EnsureCreated();
             Familles = new ObservableCollection<Famille>(_context.Famille.ToList());
             ListeTickets = new ObservableCollection<int>(_context.Tickets.Select(t => t.IdT));
@@ -186,7 +208,8 @@ namespace CaissePoly.ViewModel
 
             SelectArticleCommand = new RelayCommand<Article>(article =>
             {
-                if (article != null && !FilteredArticles.Contains(article))
+                if (!IsReadOnly) return;
+                if (article != null && !FilteredArticles.Contains(article) )
                 {
                     FilteredArticles.Add(article);
                     article.PropertyChanged += Article_PropertyChanged;
@@ -243,6 +266,7 @@ namespace CaissePoly.ViewModel
 
             DeleteArticleCommand = new RelayCommand(() =>
             {
+                if (!IsReadOnly) return;
                 if (SelectedArticle != null)
                 {
                     FilteredArticles.Remove(SelectedArticle);
@@ -280,12 +304,31 @@ namespace CaissePoly.ViewModel
 
                 MessageBox.Show($"✅ Commande validée. Total : {TotalTicket} Dinars");
                 FilteredArticles.Clear();
+                var currentWindow = System.Windows.Application.Current.Windows
+                                      .OfType<Window>()
+                                      .FirstOrDefault(w => w.IsActive);
+
+                if (currentWindow != null)
+                {
+                    // Créer une nouvelle instance de la même fenêtre
+                    var newWindow = new MainWindow(); // Remplace par le nom réel de ta fenêtre
+
+                    newWindow.Show();   // Ouvre la nouvelle fenêtre
+                    currentWindow.Close(); // Ferme l'ancienne
+                }
             });
 
             if (ListeTickets.Any())
             {
-                SelectedTicket = ListeTickets.Last();
+                IsReadOnly = true;
+
+                SelectedTicket = ListeTickets.Last() + 1;
+                ListeTickets.Add(SelectedTicket);
+
+
+
             }
+            
             CancelCommand = new RelayCommand(() =>
             {
                 CloseWindowAction?.Invoke();
@@ -348,6 +391,7 @@ namespace CaissePoly.ViewModel
 
         private void UpdateTicketInfo()
         {
+            if (IsReadOnly) return;
             var ticket = _context.Tickets
                 .Where(t => t.IdT == SelectedTicket)
                 .Select(t => new
@@ -372,13 +416,14 @@ namespace CaissePoly.ViewModel
                         FilteredArticles.Add(vente.Article);
                     }
                 }
-                IsReadOnly = true; // Or add logic to determine if it's an old ticket
+                IsReadOnly = false; // Or add logic to determine if it's an old ticket
             }
             else
             {
                 Paiement = "----";
                 TotalTicket = 0;
                 FilteredArticles.Clear();
+                
             }
         }
 

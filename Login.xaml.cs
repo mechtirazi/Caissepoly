@@ -1,8 +1,10 @@
-﻿using CaissePoly.Model;
+﻿using CaissePoly.admin;
+using CaissePoly.Model;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Intrinsics.X86;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -39,11 +41,25 @@ namespace CaissePoly
 
                 if (user != null)
                 {
+                    SessionManager.UtilisateurConnecte = user;
                     MessageBox.Show($"Bienvenue {user.nomU}", "Connexion réussie", MessageBoxButton.OK, MessageBoxImage.Information);
-                    var main = new MainWindow();
-                    main.Show();
-                    this.Close();
+                    if (user.Role == "administrateur")
+                    {
+                        var main = new MenuPrincipal();
+                        main.Show();
+                        this.Close();
+                    }
+                    else
+                    {
+                        var main = new MainWindow();
+                        main.Show();
+                        this.Close();
+                    }
+
                 }
+                
+
+                
                 else
                 {
                     MessageBox.Show("Nom d'utilisateur ou mot de passe incorrect", "Erreur", MessageBoxButton.OK, MessageBoxImage.Error);

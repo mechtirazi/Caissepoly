@@ -16,6 +16,9 @@
     <Compile Update="admin\MenuPrincipale.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="AjouterFamille.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Componnents\ArticleList.xaml.cs">
       <SubType>Code</SubType>
     </Compile>

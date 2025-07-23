@@ -55,8 +55,27 @@ namespace CaissePoly.admin
         // Gestionnaires d'événements pour les boutons
         private void OnArticlesClick(object sender, RoutedEventArgs e)
         {
+            
             // Navigation vers la page des articles
             NavigateToPage("Articles");
+            var existingWindow = Application.Current.Windows
+                               .OfType<FicheArticle>()
+                               .FirstOrDefault();
+
+            if (existingWindow != null)
+            {
+                // Si trouvée, on la met au premier plan
+                if (existingWindow.WindowState == WindowState.Minimized)
+                    existingWindow.WindowState = WindowState.Normal;
+                existingWindow.Activate();
+                
+            }
+            else
+            {
+                // Sinon, on crée et on affiche une nouvelle fenêtre
+                FicheArticle mainWindow = new FicheArticle();
+                mainWindow.Show();
+            }
         }
 
         private void OnBonEntreeClick(object sender, RoutedEventArgs e)
@@ -95,8 +114,12 @@ namespace CaissePoly.admin
 
         private void OnFacturationClick(object sender, RoutedEventArgs e)
         {
-            // Navigation vers la page facturation
-            NavigateToPage("Facturation");
+            var inventaireWindow = new AjouterFamille(); // ← tu dois avoir une classe InventaireWindow;
+            inventaireWindow.Show();
+
+            // Optionnel : Fermer la fenêtre actuelle si c'est une Window (non un UserControl)
+            Window parentWindow = Window.GetWindow(this);
+            parentWindow?.Close();
         }
 
         private void OnUtilisateursClick(object sender, RoutedEventArgs e)
@@ -135,7 +158,11 @@ namespace CaissePoly.admin
                 // Sinon, on crée et on affiche une nouvelle fenêtre
                 MainWindow mainWindow = new MainWindow();
                 mainWindow.Show();
+                Window.GetWindow(this)?.Close();
+
             }
+
+
         }
 
         // Méthodes utilitaires
