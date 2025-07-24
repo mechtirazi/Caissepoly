@@ -7,6 +7,18 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
+    <Compile Update="admin\Contact.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="admin\FicheUtilisateur.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="admin\information.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="admin\inventaire\inventaire.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="admin\LoginAdmin.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -54,6 +66,18 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Page Update="admin\Contact.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="admin\FicheUtilisateur.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="admin\information.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="admin\inventaire\inventaire.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="admin\LoginAdmin.xaml">
       <SubType>Designer</SubType>
     </Page>

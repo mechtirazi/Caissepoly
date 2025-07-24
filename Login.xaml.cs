@@ -43,7 +43,7 @@ namespace CaissePoly
                 {
                     SessionManager.UtilisateurConnecte = user;
                     MessageBox.Show($"Bienvenue {user.nomU}", "Connexion réussie", MessageBoxButton.OK, MessageBoxImage.Information);
-                    if (user.Role == "administrateur")
+                    if (user.Role.ToLower() == "administrateur")
                     {
                         var main = new MenuPrincipal();
                         main.Show();

@@ -4759,23 +4759,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\msi\\.nuget\\packages\\": {},
+    "C:\\Users\\fkiah\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\msi\\source\\repos\\CaissePoly\\CaissePoly\\CaissePoly.csproj",
+      "projectUniqueName": "C:\\Users\\fkiah\\OneDrive\\Bureau\\Net\\TP1\\gestionStock\\caisse\\Caissepoly\\CaissePoly.csproj",
       "projectName": "CaissePoly",
-      "projectPath": "C:\\Users\\msi\\source\\repos\\CaissePoly\\CaissePoly\\CaissePoly.csproj",
-      "packagesPath": "C:\\Users\\msi\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\msi\\source\\repos\\CaissePoly\\CaissePoly\\obj\\",
+      "projectPath": "C:\\Users\\fkiah\\OneDrive\\Bureau\\Net\\TP1\\gestionStock\\caisse\\Caissepoly\\CaissePoly.csproj",
+      "packagesPath": "C:\\Users\\fkiah\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\fkiah\\OneDrive\\Bureau\\Net\\TP1\\gestionStock\\caisse\\Caissepoly\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\msi\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\fkiah\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -4803,7 +4803,7 @@
         "auditLevel": "low",
         "auditMode": "direct"
       },
-      "SdkAnalysisLevel": "9.0.300"
+      "SdkAnalysisLevel": "9.0.100"
     },
     "frameworks": {
       "net8.0-windows7.0": {
@@ -4847,7 +4847,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.302/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.102/PortableRuntimeIdentifierGraph.json"
       }
     }
   },

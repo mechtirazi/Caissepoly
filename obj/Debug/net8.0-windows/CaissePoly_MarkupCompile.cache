@@ -4,17 +4,17 @@
 exe
 C#
 .cs
-C:\Users\msi\source\repos\CaissePoly\CaissePoly\obj\Debug\net8.0-windows\
+C:\Users\fkiah\OneDrive\Bureau\Net\TP1\gestionStock\caisse\Caissepoly\obj\Debug\net8.0-windows\
 CaissePoly
 none
 false
-TRACE;DEBUG;NET;NET8_0;NETCOREAPP;WINDOWS;WINDOWS7_0;NET5_0_OR_GREATER;NET6_0_OR_GREATER;NET7_0_OR_GREATER;NET8_0_OR_GREATER;NETCOREAPP3_0_OR_GREATER;NETCOREAPP3_1_OR_GREATER;WINDOWS7_0_OR_GREATER
-C:\Users\msi\source\repos\CaissePoly\CaissePoly\App.xaml
-16-1359078879
+TRACE;DEBUG;NET;NET8_0;NETCOREAPP
+C:\Users\fkiah\OneDrive\Bureau\Net\TP1\gestionStock\caisse\Caissepoly\App.xaml
+201282980982
 
-401929293810
-2291794016269
-admin\LoginAdmin.xaml;admin\MenuPrincipal.xaml;admin\MenuPrincipale.xaml;AjouterFamille.xaml;Componnents\ArticleList.xaml;Componnents\BarreNavigation.xaml;Componnents\boutton\Espece.xaml;Componnents\FamilleList.xaml;Componnents\NumericPad.xaml;Componnents\NumeroTicketPrix.xaml;Componnents\SearchBox.xaml;espece.xaml;FicheArticle.xaml;Login.xaml;MainWindow.xaml;Views\CaisseView.xaml;
+46610848848
+229-1929115321
+admin\Contact.xaml;admin\FicheUtilisateur.xaml;admin\information.xaml;admin\inventaire\inventaire.xaml;admin\LoginAdmin.xaml;admin\MenuPrincipal.xaml;admin\MenuPrincipale.xaml;AjouterFamille.xaml;Componnents\ArticleList.xaml;Componnents\BarreNavigation.xaml;Componnents\boutton\Espece.xaml;Componnents\FamilleList.xaml;Componnents\NumericPad.xaml;Componnents\NumeroTicketPrix.xaml;Componnents\SearchBox.xaml;espece.xaml;FicheArticle.xaml;Login.xaml;MainWindow.xaml;Views\CaisseView.xaml;
 
 False
 

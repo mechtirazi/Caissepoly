@@ -1,0 +1,350 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\fkiah\\OneDrive\\Bureau\\Net\\TP1\\gestionStock\\caisse\\Caissepoly\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{EF103531-A2F5-4FA8-A2D1-837DD0F92058}|CaissePoly.csproj|c:\\users\\fkiah\\onedrive\\bureau\\net\\tp1\\gestionstock\\caisse\\caissepoly\\admin\\menuprincipale.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EF103531-A2F5-4FA8-A2D1-837DD0F92058}|CaissePoly.csproj|solutionrelative:admin\\menuprincipale.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EF103531-A2F5-4FA8-A2D1-837DD0F92058}|CaissePoly.csproj|c:\\users\\fkiah\\onedrive\\bureau\\net\\tp1\\gestionstock\\caisse\\caissepoly\\admin\\menuprincipale.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{EF103531-A2F5-4FA8-A2D1-837DD0F92058}|CaissePoly.csproj|solutionrelative:admin\\menuprincipale.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EF103531-A2F5-4FA8-A2D1-837DD0F92058}|CaissePoly.csproj|c:\\users\\fkiah\\onedrive\\bureau\\net\\tp1\\gestionstock\\caisse\\caissepoly\\admin\\menuprincipal.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{EF103531-A2F5-4FA8-A2D1-837DD0F92058}|CaissePoly.csproj|solutionrelative:admin\\menuprincipal.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EF103531-A2F5-4FA8-A2D1-837DD0F92058}|CaissePoly.csproj|c:\\users\\fkiah\\onedrive\\bureau\\net\\tp1\\gestionstock\\caisse\\caissepoly\\admin\\contact.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EF103531-A2F5-4FA8-A2D1-837DD0F92058}|CaissePoly.csproj|solutionrelative:admin\\contact.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EF103531-A2F5-4FA8-A2D1-837DD0F92058}|CaissePoly.csproj|c:\\users\\fkiah\\onedrive\\bureau\\net\\tp1\\gestionstock\\caisse\\caissepoly\\admin\\contact.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{EF103531-A2F5-4FA8-A2D1-837DD0F92058}|CaissePoly.csproj|solutionrelative:admin\\contact.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EF103531-A2F5-4FA8-A2D1-837DD0F92058}|CaissePoly.csproj|c:\\users\\fkiah\\onedrive\\bureau\\net\\tp1\\gestionstock\\caisse\\caissepoly\\admin\\information.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EF103531-A2F5-4FA8-A2D1-837DD0F92058}|CaissePoly.csproj|solutionrelative:admin\\information.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EF103531-A2F5-4FA8-A2D1-837DD0F92058}|CaissePoly.csproj|c:\\users\\fkiah\\onedrive\\bureau\\net\\tp1\\gestionstock\\caisse\\caissepoly\\admin\\loginadmin.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EF103531-A2F5-4FA8-A2D1-837DD0F92058}|CaissePoly.csproj|solutionrelative:admin\\loginadmin.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EF103531-A2F5-4FA8-A2D1-837DD0F92058}|CaissePoly.csproj|c:\\users\\fkiah\\onedrive\\bureau\\net\\tp1\\gestionstock\\caisse\\caissepoly\\admin\\loginadmin.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{EF103531-A2F5-4FA8-A2D1-837DD0F92058}|CaissePoly.csproj|solutionrelative:admin\\loginadmin.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EF103531-A2F5-4FA8-A2D1-837DD0F92058}|CaissePoly.csproj|c:\\users\\fkiah\\onedrive\\bureau\\net\\tp1\\gestionstock\\caisse\\caissepoly\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{EF103531-A2F5-4FA8-A2D1-837DD0F92058}|CaissePoly.csproj|solutionrelative:app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EF103531-A2F5-4FA8-A2D1-837DD0F92058}|CaissePoly.csproj|c:\\users\\fkiah\\onedrive\\bureau\\net\\tp1\\gestionstock\\caisse\\caissepoly\\login.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EF103531-A2F5-4FA8-A2D1-837DD0F92058}|CaissePoly.csproj|solutionrelative:login.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EF103531-A2F5-4FA8-A2D1-837DD0F92058}|CaissePoly.csproj|c:\\users\\fkiah\\onedrive\\bureau\\net\\tp1\\gestionstock\\caisse\\caissepoly\\login.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{EF103531-A2F5-4FA8-A2D1-837DD0F92058}|CaissePoly.csproj|solutionrelative:login.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EF103531-A2F5-4FA8-A2D1-837DD0F92058}|CaissePoly.csproj|c:\\users\\fkiah\\onedrive\\bureau\\net\\tp1\\gestionstock\\caisse\\caissepoly\\fichearticle.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{EF103531-A2F5-4FA8-A2D1-837DD0F92058}|CaissePoly.csproj|solutionrelative:fichearticle.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EF103531-A2F5-4FA8-A2D1-837DD0F92058}|CaissePoly.csproj|c:\\users\\fkiah\\onedrive\\bureau\\net\\tp1\\gestionstock\\caisse\\caissepoly\\admin\\information.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{EF103531-A2F5-4FA8-A2D1-837DD0F92058}|CaissePoly.csproj|solutionrelative:admin\\information.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EF103531-A2F5-4FA8-A2D1-837DD0F92058}|CaissePoly.csproj|c:\\users\\fkiah\\onedrive\\bureau\\net\\tp1\\gestionstock\\caisse\\caissepoly\\admin\\inventaire\\inventaire.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EF103531-A2F5-4FA8-A2D1-837DD0F92058}|CaissePoly.csproj|solutionrelative:admin\\inventaire\\inventaire.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EF103531-A2F5-4FA8-A2D1-837DD0F92058}|CaissePoly.csproj|c:\\users\\fkiah\\onedrive\\bureau\\net\\tp1\\gestionstock\\caisse\\caissepoly\\admin\\inventaire\\inventaire.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{EF103531-A2F5-4FA8-A2D1-837DD0F92058}|CaissePoly.csproj|solutionrelative:admin\\inventaire\\inventaire.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EF103531-A2F5-4FA8-A2D1-837DD0F92058}|CaissePoly.csproj|c:\\users\\fkiah\\onedrive\\bureau\\net\\tp1\\gestionstock\\caisse\\caissepoly\\admin\\ficheutilisateur.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EF103531-A2F5-4FA8-A2D1-837DD0F92058}|CaissePoly.csproj|solutionrelative:admin\\ficheutilisateur.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EF103531-A2F5-4FA8-A2D1-837DD0F92058}|CaissePoly.csproj|c:\\users\\fkiah\\onedrive\\bureau\\net\\tp1\\gestionstock\\caisse\\caissepoly\\admin\\ficheutilisateur.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{EF103531-A2F5-4FA8-A2D1-837DD0F92058}|CaissePoly.csproj|solutionrelative:admin\\ficheutilisateur.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EF103531-A2F5-4FA8-A2D1-837DD0F92058}|CaissePoly.csproj|c:\\users\\fkiah\\onedrive\\bureau\\net\\tp1\\gestionstock\\caisse\\caissepoly\\viewmodel\\passwordboxhelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EF103531-A2F5-4FA8-A2D1-837DD0F92058}|CaissePoly.csproj|solutionrelative:viewmodel\\passwordboxhelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EF103531-A2F5-4FA8-A2D1-837DD0F92058}|CaissePoly.csproj|c:\\users\\fkiah\\onedrive\\bureau\\net\\tp1\\gestionstock\\caisse\\caissepoly\\viewmodel\\ficheutilisateurviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EF103531-A2F5-4FA8-A2D1-837DD0F92058}|CaissePoly.csproj|solutionrelative:viewmodel\\ficheutilisateurviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EF103531-A2F5-4FA8-A2D1-837DD0F92058}|CaissePoly.csproj|c:\\users\\fkiah\\onedrive\\bureau\\net\\tp1\\gestionstock\\caisse\\caissepoly\\caissepoly.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{EF103531-A2F5-4FA8-A2D1-837DD0F92058}|CaissePoly.csproj|solutionrelative:caissepoly.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 13,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "LoginAdmin.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\fkiah\\OneDrive\\Bureau\\Net\\TP1\\gestionStock\\caisse\\Caissepoly\\admin\\LoginAdmin.xaml.cs",
+              "RelativeDocumentMoniker": "admin\\LoginAdmin.xaml.cs",
+              "ToolTip": "C:\\Users\\fkiah\\OneDrive\\Bureau\\Net\\TP1\\gestionStock\\caisse\\Caissepoly\\admin\\LoginAdmin.xaml.cs",
+              "RelativeToolTip": "admin\\LoginAdmin.xaml.cs",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-24T01:19:46.968Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "LoginAdmin.xaml",
+              "DocumentMoniker": "C:\\Users\\fkiah\\OneDrive\\Bureau\\Net\\TP1\\gestionStock\\caisse\\Caissepoly\\admin\\LoginAdmin.xaml",
+              "RelativeDocumentMoniker": "admin\\LoginAdmin.xaml",
+              "ToolTip": "C:\\Users\\fkiah\\OneDrive\\Bureau\\Net\\TP1\\gestionStock\\caisse\\Caissepoly\\admin\\LoginAdmin.xaml",
+              "RelativeToolTip": "admin\\LoginAdmin.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-07-24T01:19:39.515Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Login.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\fkiah\\OneDrive\\Bureau\\Net\\TP1\\gestionStock\\caisse\\Caissepoly\\Login.xaml.cs",
+              "RelativeDocumentMoniker": "Login.xaml.cs",
+              "ToolTip": "C:\\Users\\fkiah\\OneDrive\\Bureau\\Net\\TP1\\gestionStock\\caisse\\Caissepoly\\Login.xaml.cs",
+              "RelativeToolTip": "Login.xaml.cs",
+              "ViewState": "AgIAABUAAAAAAAAAAAAAACkAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-24T01:19:13.656Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Login.xaml",
+              "DocumentMoniker": "C:\\Users\\fkiah\\OneDrive\\Bureau\\Net\\TP1\\gestionStock\\caisse\\Caissepoly\\Login.xaml",
+              "RelativeDocumentMoniker": "Login.xaml",
+              "ToolTip": "C:\\Users\\fkiah\\OneDrive\\Bureau\\Net\\TP1\\gestionStock\\caisse\\Caissepoly\\Login.xaml",
+              "RelativeToolTip": "Login.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-07-24T01:19:10.994Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "App.xaml",
+              "DocumentMoniker": "C:\\Users\\fkiah\\OneDrive\\Bureau\\Net\\TP1\\gestionStock\\caisse\\Caissepoly\\App.xaml",
+              "RelativeDocumentMoniker": "App.xaml",
+              "ToolTip": "C:\\Users\\fkiah\\OneDrive\\Bureau\\Net\\TP1\\gestionStock\\caisse\\Caissepoly\\App.xaml",
+              "RelativeToolTip": "App.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-07-24T01:18:09.555Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "FicheArticle.xaml",
+              "DocumentMoniker": "C:\\Users\\fkiah\\OneDrive\\Bureau\\Net\\TP1\\gestionStock\\caisse\\Caissepoly\\FicheArticle.xaml",
+              "RelativeDocumentMoniker": "FicheArticle.xaml",
+              "ToolTip": "C:\\Users\\fkiah\\OneDrive\\Bureau\\Net\\TP1\\gestionStock\\caisse\\Caissepoly\\FicheArticle.xaml",
+              "RelativeToolTip": "FicheArticle.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-07-24T01:17:58.717Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Contact.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\fkiah\\OneDrive\\Bureau\\Net\\TP1\\gestionStock\\caisse\\Caissepoly\\admin\\Contact.xaml.cs",
+              "RelativeDocumentMoniker": "admin\\Contact.xaml.cs",
+              "ToolTip": "C:\\Users\\fkiah\\OneDrive\\Bureau\\Net\\TP1\\gestionStock\\caisse\\Caissepoly\\admin\\Contact.xaml.cs",
+              "RelativeToolTip": "admin\\Contact.xaml.cs",
+              "ViewState": "AgIAAAIAAAAAAAAAAAAmwCsAAABAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-24T01:11:31.29Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Contact.xaml",
+              "DocumentMoniker": "C:\\Users\\fkiah\\OneDrive\\Bureau\\Net\\TP1\\gestionStock\\caisse\\Caissepoly\\admin\\Contact.xaml",
+              "RelativeDocumentMoniker": "admin\\Contact.xaml",
+              "ToolTip": "C:\\Users\\fkiah\\OneDrive\\Bureau\\Net\\TP1\\gestionStock\\caisse\\Caissepoly\\admin\\Contact.xaml",
+              "RelativeToolTip": "admin\\Contact.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-07-24T01:10:41.332Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "information.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\fkiah\\OneDrive\\Bureau\\Net\\TP1\\gestionStock\\caisse\\Caissepoly\\admin\\information.xaml.cs",
+              "RelativeDocumentMoniker": "admin\\information.xaml.cs",
+              "ToolTip": "C:\\Users\\fkiah\\OneDrive\\Bureau\\Net\\TP1\\gestionStock\\caisse\\Caissepoly\\admin\\information.xaml.cs",
+              "RelativeToolTip": "admin\\information.xaml.cs",
+              "ViewState": "AgIAABUAAAAAAAAAAAAAABwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-24T01:09:49.031Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "information.xaml",
+              "DocumentMoniker": "C:\\Users\\fkiah\\OneDrive\\Bureau\\Net\\TP1\\gestionStock\\caisse\\Caissepoly\\admin\\information.xaml",
+              "RelativeDocumentMoniker": "admin\\information.xaml",
+              "ToolTip": "C:\\Users\\fkiah\\OneDrive\\Bureau\\Net\\TP1\\gestionStock\\caisse\\Caissepoly\\admin\\information.xaml",
+              "RelativeToolTip": "admin\\information.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-07-24T01:08:53.276Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "MenuPrincipal.xaml",
+              "DocumentMoniker": "C:\\Users\\fkiah\\OneDrive\\Bureau\\Net\\TP1\\gestionStock\\caisse\\Caissepoly\\admin\\MenuPrincipal.xaml",
+              "RelativeDocumentMoniker": "admin\\MenuPrincipal.xaml",
+              "ToolTip": "C:\\Users\\fkiah\\OneDrive\\Bureau\\Net\\TP1\\gestionStock\\caisse\\Caissepoly\\admin\\MenuPrincipal.xaml",
+              "RelativeToolTip": "admin\\MenuPrincipal.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-07-24T01:05:42.477Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "inventaire.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\fkiah\\OneDrive\\Bureau\\Net\\TP1\\gestionStock\\caisse\\Caissepoly\\admin\\inventaire\\inventaire.xaml.cs",
+              "RelativeDocumentMoniker": "admin\\inventaire\\inventaire.xaml.cs",
+              "ToolTip": "C:\\Users\\fkiah\\OneDrive\\Bureau\\Net\\TP1\\gestionStock\\caisse\\Caissepoly\\admin\\inventaire\\inventaire.xaml.cs",
+              "RelativeToolTip": "admin\\inventaire\\inventaire.xaml.cs",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAmwB0AAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-24T01:04:32.495Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "inventaire.xaml",
+              "DocumentMoniker": "C:\\Users\\fkiah\\OneDrive\\Bureau\\Net\\TP1\\gestionStock\\caisse\\Caissepoly\\admin\\inventaire\\inventaire.xaml",
+              "RelativeDocumentMoniker": "admin\\inventaire\\inventaire.xaml",
+              "ToolTip": "C:\\Users\\fkiah\\OneDrive\\Bureau\\Net\\TP1\\gestionStock\\caisse\\Caissepoly\\admin\\inventaire\\inventaire.xaml",
+              "RelativeToolTip": "admin\\inventaire\\inventaire.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-07-24T01:03:47.914Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "MenuPrincipale.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\fkiah\\OneDrive\\Bureau\\Net\\TP1\\gestionStock\\caisse\\Caissepoly\\admin\\MenuPrincipale.xaml.cs",
+              "RelativeDocumentMoniker": "admin\\MenuPrincipale.xaml.cs",
+              "ToolTip": "C:\\Users\\fkiah\\OneDrive\\Bureau\\Net\\TP1\\gestionStock\\caisse\\Caissepoly\\admin\\MenuPrincipale.xaml.cs",
+              "RelativeToolTip": "admin\\MenuPrincipale.xaml.cs",
+              "ViewState": "AgIAAFMAAAAAAAAAAAAYwGYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-24T01:00:31.017Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "MenuPrincipale.xaml",
+              "DocumentMoniker": "C:\\Users\\fkiah\\OneDrive\\Bureau\\Net\\TP1\\gestionStock\\caisse\\Caissepoly\\admin\\MenuPrincipale.xaml",
+              "RelativeDocumentMoniker": "admin\\MenuPrincipale.xaml",
+              "ToolTip": "C:\\Users\\fkiah\\OneDrive\\Bureau\\Net\\TP1\\gestionStock\\caisse\\Caissepoly\\admin\\MenuPrincipale.xaml",
+              "RelativeToolTip": "admin\\MenuPrincipale.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-07-24T01:00:26.057Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "PasswordBoxHelper.cs",
+              "DocumentMoniker": "C:\\Users\\fkiah\\OneDrive\\Bureau\\Net\\TP1\\gestionStock\\caisse\\Caissepoly\\ViewModel\\PasswordBoxHelper.cs",
+              "RelativeDocumentMoniker": "ViewModel\\PasswordBoxHelper.cs",
+              "ToolTip": "C:\\Users\\fkiah\\OneDrive\\Bureau\\Net\\TP1\\gestionStock\\caisse\\Caissepoly\\ViewModel\\PasswordBoxHelper.cs",
+              "RelativeToolTip": "ViewModel\\PasswordBoxHelper.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAABWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-24T00:56:03.541Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "FicheUtilisateur.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\fkiah\\OneDrive\\Bureau\\Net\\TP1\\gestionStock\\caisse\\Caissepoly\\admin\\FicheUtilisateur.xaml.cs",
+              "RelativeDocumentMoniker": "admin\\FicheUtilisateur.xaml.cs",
+              "ToolTip": "C:\\Users\\fkiah\\OneDrive\\Bureau\\Net\\TP1\\gestionStock\\caisse\\Caissepoly\\admin\\FicheUtilisateur.xaml.cs",
+              "RelativeToolTip": "admin\\FicheUtilisateur.xaml.cs",
+              "ViewState": "AgIAABoAAAAAAAAAAAAAADUAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-24T00:55:11.965Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "FicheUtilisateurViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\fkiah\\OneDrive\\Bureau\\Net\\TP1\\gestionStock\\caisse\\Caissepoly\\ViewModel\\FicheUtilisateurViewModel.cs",
+              "RelativeDocumentMoniker": "ViewModel\\FicheUtilisateurViewModel.cs",
+              "ToolTip": "C:\\Users\\fkiah\\OneDrive\\Bureau\\Net\\TP1\\gestionStock\\caisse\\Caissepoly\\ViewModel\\FicheUtilisateurViewModel.cs",
+              "RelativeToolTip": "ViewModel\\FicheUtilisateurViewModel.cs",
+              "ViewState": "AgIAAFwAAAAAAAAAAAAmwGAAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-24T00:53:14.905Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "FicheUtilisateur.xaml",
+              "DocumentMoniker": "C:\\Users\\fkiah\\OneDrive\\Bureau\\Net\\TP1\\gestionStock\\caisse\\Caissepoly\\admin\\FicheUtilisateur.xaml",
+              "RelativeDocumentMoniker": "admin\\FicheUtilisateur.xaml",
+              "ToolTip": "C:\\Users\\fkiah\\OneDrive\\Bureau\\Net\\TP1\\gestionStock\\caisse\\Caissepoly\\admin\\FicheUtilisateur.xaml",
+              "RelativeToolTip": "admin\\FicheUtilisateur.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-07-24T00:50:36.506Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "CaissePoly",
+              "DocumentMoniker": "C:\\Users\\fkiah\\OneDrive\\Bureau\\Net\\TP1\\gestionStock\\caisse\\Caissepoly\\CaissePoly.csproj",
+              "RelativeDocumentMoniker": "CaissePoly.csproj",
+              "ToolTip": "C:\\Users\\fkiah\\OneDrive\\Bureau\\Net\\TP1\\gestionStock\\caisse\\Caissepoly\\CaissePoly.csproj",
+              "RelativeToolTip": "CaissePoly.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-07-24T00:48:12.065Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

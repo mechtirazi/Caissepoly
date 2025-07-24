@@ -55,61 +55,50 @@ namespace CaissePoly.admin
         // Gestionnaires d'événements pour les boutons
         private void OnArticlesClick(object sender, RoutedEventArgs e)
         {
-            
-            // Navigation vers la page des articles
-            NavigateToPage("Articles");
-            var existingWindow = Application.Current.Windows
-                               .OfType<FicheArticle>()
-                               .FirstOrDefault();
 
-            if (existingWindow != null)
-            {
-                // Si trouvée, on la met au premier plan
-                if (existingWindow.WindowState == WindowState.Minimized)
-                    existingWindow.WindowState = WindowState.Normal;
-                existingWindow.Activate();
-                
-            }
-            else
-            {
-                // Sinon, on crée et on affiche une nouvelle fenêtre
-                FicheArticle mainWindow = new FicheArticle();
-                mainWindow.Show();
-            }
+            var inventaireWindow = new FicheArticle(); // ← tu dois avoir une classe InventaireWindow;
+            inventaireWindow.Show();
+
+            // Optionnel : Fermer la fenêtre actuelle si c'est une Window (non un UserControl)
+            Window parentWindow = Window.GetWindow(this);
+            parentWindow?.Close();
         }
 
         private void OnBonEntreeClick(object sender, RoutedEventArgs e)
         {
-            // Navigation vers la page bon d'entrée et sortie
-            NavigateToPage("BonEntreeSortie");
+          
         }
 
         private void OnInventaireClick(object sender, RoutedEventArgs e)
         {
-            // Navigation vers la page inventaire
-            NavigateToPage("Inventaire");
+            var inventaireWindow = new inventaire.inventaire(); // ← tu dois avoir une classe InventaireWindow;
+            inventaireWindow.Show();
+
+            // Optionnel : Fermer la fenêtre actuelle si c'est une Window (non un UserControl)
+            Window parentWindow = Window.GetWindow(this);
+            parentWindow?.Close();
         }
 
         private void OnInformationClick(object sender, RoutedEventArgs e)
         {
-            // Navigation vers la page information
-            NavigateToPage("Information");
+            var inventaireWindow = new information(); // ← tu dois avoir une classe InventaireWindow;
+            inventaireWindow.Show();
+
+            // Optionnel : Fermer la fenêtre actuelle si c'est une Window (non un UserControl)
+            Window parentWindow = Window.GetWindow(this);
+            parentWindow?.Close();
         }
 
         private void OnFermerCaisseClick(object sender, RoutedEventArgs e)
         {
-            // Afficher une boîte de dialogue pour confirmer la fermeture
-            var result = MessageBox.Show(
-                "Voulez-vous vraiment fermer la caisse ?",
-                "Confirmation",
-                MessageBoxButton.YesNo,
-                MessageBoxImage.Question);
+
+            var result = MessageBox.Show("Voulez-vous vraiment fermer la caisse ?", "Confirmation", MessageBoxButton.YesNo, MessageBoxImage.Question);
 
             if (result == MessageBoxResult.Yes)
             {
-                // Logique de fermeture de la caisse
-                FermerCaisse();
+                Application.Current.Shutdown();
             }
+
         }
 
         private void OnFacturationClick(object sender, RoutedEventArgs e)
@@ -124,20 +113,26 @@ namespace CaissePoly.admin
 
         private void OnUtilisateursClick(object sender, RoutedEventArgs e)
         {
-            // Navigation vers la page utilisateurs
-            NavigateToPage("Utilisateurs");
+            var inventaireWindow = new FicheArticle(); // ← tu dois avoir une classe InventaireWindow
+            inventaireWindow.Show();
+
+            // Optionnel : Fermer la fenêtre actuelle si c'est une Window (non un UserControl)
+            Window parentWindow = Window.GetWindow(this);
+            parentWindow?.Close();
         }
 
         private void OnContactClick(object sender, RoutedEventArgs e)
         {
-            // Navigation vers la page contact
-            NavigateToPage("Contact");
+            var inventaireWindow = new Contact(); // ← tu dois avoir une classe InventaireWindow;
+            inventaireWindow.Show();
+
+            // Optionnel : Fermer la fenêtre actuelle si c'est une Window (non un UserControl)
+            Window parentWindow = Window.GetWindow(this);
+            parentWindow?.Close();
         }
 
         private void OnParametreClick(object sender, RoutedEventArgs e)
-        {
-            // Navigation vers la page paramètres
-            NavigateToPage("Parametres");
+        { 
         }
 
         private void OnCaisseMainClick(object sender, RoutedEventArgs e)
@@ -164,21 +159,6 @@ namespace CaissePoly.admin
 
 
         }
-
-        // Méthodes utilitaires
-        private void NavigateToPage(string pageName)
-        {
-            // Implémentation de la navigation selon votre architecture
-            // Par exemple, si vous utilisez un Frame :
-            // this.Frame.Navigate(new Uri($"Pages/{pageName}.xaml", UriKind.Relative));
-
-            // Ou si vous utilisez un système de navigation personnalisé :
-            // NavigationService.Navigate(pageName);
-
-            // Pour le moment, on affiche juste le nom de la page
-            MessageBox.Show($"Navigation vers : {pageName}");
-        }
-
         private void FermerCaisse()
         {
             // Logique pour fermer la caisse
