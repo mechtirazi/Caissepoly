@@ -1,0 +1,258 @@
+﻿<Window x:Class="CaissePoly.admin.BonSortieWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CaissePoly.admin"
+        mc:Ignorable="d"
+        Title="Bon de Sortie - Historique des Ventes" Height="600" Width="1000"
+        WindowStartupLocation="CenterScreen">
+
+        <Window.Resources>
+            <!-- Style pour le titre principal -->
+            <Style x:Key="TitleStyle" TargetType="TextBlock">
+                <Setter Property="FontSize" Value="28"/>
+                <Setter Property="FontWeight" Value="Bold"/>
+                <Setter Property="Foreground" Value="White"/>
+                <Setter Property="HorizontalAlignment" Value="Center"/>
+                <Setter Property="Margin" Value="0,20,0,30"/>
+                <Setter Property="Effect">
+                    <Setter.Value>
+                        <DropShadowEffect Color="Black" BlurRadius="3" ShadowDepth="2" Opacity="0.7"/>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+
+            <!-- Style pour les boutons de retour -->
+            <Style x:Key="BackButtonStyle" TargetType="Button">
+                <Setter Property="Background">
+                    <Setter.Value>
+                        <SolidColorBrush Color="White" Opacity="0.2"/>
+                    </Setter.Value>
+                </Setter>
+                <Setter Property="Foreground" Value="White"/>
+                <Setter Property="FontWeight" Value="Bold"/>
+                <Setter Property="FontSize" Value="14"/>
+                <Setter Property="Padding" Value="18,10"/>
+                <Setter Property="Margin" Value="5"/>
+                <Setter Property="BorderThickness" Value="0"/>
+                <Setter Property="Cursor" Value="Hand"/>
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="Button">
+                            <Border Background="{TemplateBinding Background}"
+                                CornerRadius="8"
+                                BorderThickness="0">
+                                <Border.Effect>
+                                    <DropShadowEffect Color="Black" BlurRadius="10" ShadowDepth="4" Opacity="0.3"/>
+                                </Border.Effect>
+                                <StackPanel Orientation="Horizontal" 
+                                      HorizontalAlignment="Center" 
+                                      VerticalAlignment="Center">
+                                    <TextBlock Text="{TemplateBinding Tag}" 
+                                         FontFamily="Segoe MDL2 Assets" 
+                                         FontSize="16" 
+                                         Margin="0,0,8,0"
+                                         VerticalAlignment="Center"/>
+                                    <ContentPresenter HorizontalAlignment="Center" 
+                                                VerticalAlignment="Center"/>
+                                </StackPanel>
+                            </Border>
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background">
+                                        <Setter.Value>
+                                            <SolidColorBrush Color="White" Opacity="0.4"/>
+                                        </Setter.Value>
+                                    </Setter>
+                                    <Setter Property="RenderTransform">
+                                        <Setter.Value>
+                                            <ScaleTransform ScaleX="1.05" ScaleY="1.05"/>
+                                        </Setter.Value>
+                                    </Setter>
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+
+            <!-- Style pour le DataGrid -->
+            <Style x:Key="ModernDataGridStyle" TargetType="DataGrid">
+                <Setter Property="Background">
+                    <Setter.Value>
+                        <SolidColorBrush Color="White" Opacity="0.1"/>
+                    </Setter.Value>
+                </Setter>
+                <Setter Property="BorderThickness" Value="0"/>
+                <Setter Property="GridLinesVisibility" Value="None"/>
+                <Setter Property="HeadersVisibility" Value="Column"/>
+                <Setter Property="AutoGenerateColumns" Value="False"/>
+                <Setter Property="CanUserAddRows" Value="False"/>
+                <Setter Property="CanUserDeleteRows" Value="False"/>
+                <Setter Property="IsReadOnly" Value="True"/>
+                <Setter Property="SelectionMode" Value="Single"/>
+                <Setter Property="SelectionUnit" Value="FullRow"/>
+                <Setter Property="AlternatingRowBackground">
+                    <Setter.Value>
+                        <SolidColorBrush Color="White" Opacity="0.05"/>
+                    </Setter.Value>
+                </Setter>
+                <Setter Property="RowBackground">
+                    <Setter.Value>
+                        <SolidColorBrush Color="Transparent"/>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+
+            <!-- Style pour les en-têtes de colonnes -->
+            <Style x:Key="HeaderStyle" TargetType="DataGridColumnHeader">
+                <Setter Property="Background" Value="#FF2980B9"/>
+                <Setter Property="Foreground" Value="White"/>
+                <Setter Property="FontWeight" Value="Bold"/>
+                <Setter Property="FontSize" Value="14"/>
+                <Setter Property="Padding" Value="15"/>
+                <Setter Property="HorizontalContentAlignment" Value="Left"/>
+                <Setter Property="BorderThickness" Value="0,0,0,2"/>
+                <Setter Property="BorderBrush" Value="#FF1F618D"/>
+                <Setter Property="Height" Value="45"/>
+            </Style>
+
+            <!-- Style pour les cellules -->
+            <Style x:Key="CellStyle" TargetType="DataGridCell">
+                <Setter Property="Background" Value="Transparent"/>
+                <Setter Property="Foreground" Value="White"/>
+                <Setter Property="FontSize" Value="13"/>
+                <Setter Property="Padding" Value="15,12"/>
+                <Setter Property="BorderThickness" Value="0,0,0,1"/>
+                <Setter Property="BorderBrush" Value="#FF444444"/>
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="DataGridCell">
+                            <Border Background="{TemplateBinding Background}"
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="{TemplateBinding BorderThickness}"
+                                Padding="{TemplateBinding Padding}">
+                                <ContentPresenter VerticalAlignment="Center"/>
+                            </Border>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+                <Style.Triggers>
+                    <Trigger Property="IsSelected" Value="True">
+                        <Setter Property="Background">
+                            <Setter.Value>
+                                <SolidColorBrush Color="White" Opacity="0.15"/>
+                            </Setter.Value>
+                        </Setter>
+                    </Trigger>
+                </Style.Triggers>
+            </Style>
+
+            <!-- Style pour les lignes -->
+            <Style x:Key="RowStyle" TargetType="DataGridRow">
+                <Setter Property="Background" Value="Transparent"/>
+                <Setter Property="Cursor" Value="Hand"/>
+                <Style.Triggers>
+                    <Trigger Property="IsMouseOver" Value="True">
+                        <Setter Property="Background">
+                            <Setter.Value>
+                                <SolidColorBrush Color="White" Opacity="0.15"/>
+                            </Setter.Value>
+                        </Setter>
+                    </Trigger>
+                    <Trigger Property="IsSelected" Value="True">
+                        <Setter Property="Background">
+                            <Setter.Value>
+                                <SolidColorBrush Color="White" Opacity="0.2"/>
+                            </Setter.Value>
+                        </Setter>
+                    </Trigger>
+                </Style.Triggers>
+            </Style>
+        </Window.Resources>
+
+        <!-- Arrière-plan avec dégradé -->
+        <Window.Background>
+            <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                <GradientStop Color="#FF4B79A1" Offset="0"/>
+                <GradientStop Color="#FF283E51" Offset="1"/>
+            </LinearGradientBrush>
+        </Window.Background>
+
+        <Grid Margin="20">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <!-- Boutons de retour -->
+                <RowDefinition Height="Auto"/>
+                <!-- Titre -->
+                <RowDefinition Height="*"/>
+                <!-- DataGrid -->
+            </Grid.RowDefinitions>
+
+            <!-- Conteneur des boutons de retour -->
+        <StackPanel Grid.Row="0" 
+                    Orientation="Horizontal" 
+                    HorizontalAlignment="Center" 
+                    Margin="0,0,0,20">
+            <Button Content="Retour Accueil" 
+                    Tag="&#xE80F;" 
+                    Style="{StaticResource BackButtonStyle}"
+                    Width="180"
+                    Click="RetourAccueilButton_Click"/>
+            </StackPanel>
+
+            <!-- Titre principal -->
+            <TextBlock Grid.Row="1" 
+                   Text="Historique des Ventes" 
+                   Style="{StaticResource TitleStyle}"/>
+
+            <!-- Container pour le DataGrid avec bordure arrondie -->
+        <Border Grid.Row="2" 
+        Background="{x:Null}" 
+        CornerRadius="12" 
+        Margin="0,10,0,0">
+            <Border.Effect>
+                <DropShadowEffect Color="Black" BlurRadius="20" ShadowDepth="8" Opacity="0.3"/>
+            </Border.Effect>
+
+            <!-- ❌ Supprimer le bloc Border.Clip -->
+
+            <DataGrid ItemsSource="{Binding SortieArticles}"
+          AutoGenerateColumns="False"
+          HeadersVisibility="Column"
+          RowBackground="White"
+          AlternatingRowBackground="#f0f0f0"
+          GridLinesVisibility="Horizontal"
+          FontSize="14"
+          FontWeight="Normal"
+          Margin="10"
+          ColumnHeaderHeight="40"
+          Background="White"
+          Foreground="Black">
+
+                <DataGrid.ColumnHeaderStyle>
+                    <Style TargetType="DataGridColumnHeader">
+                        <Setter Property="Background" Value="#2D89EF" />
+                        <!-- Bleu Windows -->
+                        <Setter Property="Foreground" Value="White" />
+                        <Setter Property="FontWeight" Value="Bold" />
+                        <Setter Property="HorizontalContentAlignment" Value="Center" />
+                        <Setter Property="VerticalContentAlignment" Value="Center" />
+                        <Setter Property="Height" Value="40" />
+                    </Style>
+                </DataGrid.ColumnHeaderStyle>
+
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="N° Ticket" Binding="{Binding TicketId}" Width="*" />
+                    <DataGridTextColumn Header="Article" Binding="{Binding Article.designation}" Width="2*" />
+                    <DataGridTextColumn Header="Quantité Vendue" Binding="{Binding Quantite}" Width="*" />
+                    <DataGridTextColumn Header="Prix Unitaire" Binding="{Binding PrixUnitaire}" Width="*" />
+                    <DataGridTextColumn Header="Date Vente" Binding="{Binding TicketDate}" Width="*" />
+                </DataGrid.Columns>
+            </DataGrid>
+        </Border>
+
+        </Grid>
+
+    </Window>

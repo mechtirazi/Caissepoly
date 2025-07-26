@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET8_0;NETCOREAPP
 C:\Users\fkiah\OneDrive\Bureau\Net\TP1\gestionStock\caisse\Caissepoly\App.xaml
-201282980982
+21-1686806550
 
-48-443596990
+51693248709
 229-1929115321
-admin\Contact.xaml;admin\FicheUtilisateur.xaml;admin\information.xaml;admin\inventaire\inventaire.xaml;admin\LoginAdmin.xaml;admin\MenuPrincipal.xaml;admin\MenuPrincipale.xaml;AjouterFamille.xaml;Componnents\ArticleList.xaml;Componnents\BarreNavigation.xaml;Componnents\boutton\Espece.xaml;Componnents\FamilleList.xaml;Componnents\NumericPad.xaml;Componnents\NumeroTicketPrix.xaml;Componnents\SearchBox.xaml;espece.xaml;FicheArticle.xaml;Login.xaml;MainWindow.xaml;Views\CaisseView.xaml;
+admin\BonSortieWindow.xaml;admin\Contact.xaml;admin\FicheUtilisateur.xaml;admin\information.xaml;admin\inventaire\inventaire.xaml;admin\LoginAdmin.xaml;admin\MenuPrincipal.xaml;admin\MenuPrincipale.xaml;AjouterFamille.xaml;Componnents\ArticleList.xaml;Componnents\BarreNavigation.xaml;Componnents\boutton\Espece.xaml;Componnents\FamilleList.xaml;Componnents\NumericPad.xaml;Componnents\NumeroTicketPrix.xaml;Componnents\SearchBox.xaml;espece.xaml;FicheArticle.xaml;Login.xaml;MainWindow.xaml;Views\CaisseView.xaml;
 
 True
 

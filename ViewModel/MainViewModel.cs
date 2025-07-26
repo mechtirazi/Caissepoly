@@ -12,6 +12,7 @@ using static CaissePoly.espece;
 namespace CaissePoly.ViewModel
 {
     public class MainViewModel :INotifyPropertyChanged
+
     {
         private readonly CDBContext _context = new CDBContext();
 
@@ -44,6 +45,15 @@ namespace CaissePoly.ViewModel
                 }
             }
         }
+        private int _index;
+        public int Index
+        {
+            get => _index;
+            set { _index = value; OnPropertyChanged(); }
+        }
+        public int TotalQuantite => FilteredArticles?.Sum(a => a.quantiteVente) ?? 0;
+
+        public decimal TotalPrix => FilteredArticles?.Sum(a => a.Total) ?? 0;
 
         public ICommand SearchCommand { get; }
 
@@ -186,6 +196,28 @@ namespace CaissePoly.ViewModel
                 _afficherFamilles = value;
                 OnPropertyChanged();
                 ChargerArticlesParFamille();
+                FilteredArticles.CollectionChanged += (s, e) =>
+                {
+                    if (e.NewItems != null)
+                    {
+                        foreach (Article article in e.NewItems)
+                        {
+                            article.PropertyChanged += Article_PropertyChanged;
+                        }
+                    }
+
+                    if (e.OldItems != null)
+                    {
+                        foreach (Article article in e.OldItems)
+                        {
+                            article.PropertyChanged -= Article_PropertyChanged;
+                        }
+                    }
+
+                    OnPropertyChanged(nameof(TotalPrix));
+                    OnPropertyChanged(nameof(TotalQuantite));
+                };
+
             }
         }
         public bool estonloading;
@@ -213,6 +245,7 @@ namespace CaissePoly.ViewModel
                 {
                     FilteredArticles.Add(article);
                     article.PropertyChanged += Article_PropertyChanged;
+                    MettreAJourIndices(); 
                     RecalculerTotalTicket();
                 }
             });
@@ -271,6 +304,7 @@ namespace CaissePoly.ViewModel
                 {
                     FilteredArticles.Remove(SelectedArticle);
                     SelectedArticle = null;
+                    MettreAJourIndices(); 
                 }
             });
 
@@ -416,7 +450,8 @@ namespace CaissePoly.ViewModel
                         FilteredArticles.Add(vente.Article);
                     }
                 }
-                IsReadOnly = false; // Or add logic to determine if it's an old ticket
+                MettreAJourIndices(); 
+                IsReadOnly = false; 
             }
             else
             {
@@ -429,7 +464,10 @@ namespace CaissePoly.ViewModel
 
         private void RecalculerTotalTicket()
         {
+
             TotalTicket = FilteredArticles.Sum(a => a.Total);
+            OnPropertyChanged(nameof(TotalPrix));
+            OnPropertyChanged(nameof(TotalQuantite));
         }
         public void ValiderPaiementEnEspece()
         {
@@ -450,14 +488,20 @@ namespace CaissePoly.ViewModel
         {
             if (e.PropertyName == nameof(Article.quantiteVente))
             {
-                var article = sender as Article;
-                if (article != null)
-                {
-                    _context.Article.Update(article);
-                    _context.SaveChanges();
-                }
+                RecalculerTotalTicket();
+                OnPropertyChanged(nameof(TotalPrix));
+                OnPropertyChanged(nameof(TotalQuantite));
             }
         }
+        private void MettreAJourIndices()
+        {
+            for (int i = 0; i < FilteredArticles.Count; i++)
+            {
+                Index = i;// Commence à 1
+            }
+        }
+
+
 
         public event PropertyChangedEventHandler PropertyChanged;
         protected void OnPropertyChanged([CallerMemberName] string propertyName = null)

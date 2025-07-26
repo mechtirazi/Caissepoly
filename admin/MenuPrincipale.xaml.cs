@@ -66,7 +66,12 @@ namespace CaissePoly.admin
 
         private void OnBonEntreeClick(object sender, RoutedEventArgs e)
         {
-          
+            var inventaireWindow = new BonSortieWindow(); // ← tu dois avoir une classe InventaireWindow;
+            inventaireWindow.Show();
+
+            // Optionnel : Fermer la fenêtre actuelle si c'est une Window (non un UserControl)
+            Window parentWindow = Window.GetWindow(this);
+            parentWindow?.Close();
         }
 
         private void OnInventaireClick(object sender, RoutedEventArgs e)
@@ -113,7 +118,7 @@ namespace CaissePoly.admin
 
         private void OnUtilisateursClick(object sender, RoutedEventArgs e)
         {
-            var inventaireWindow = new FicheArticle(); // ← tu dois avoir une classe InventaireWindow
+            var inventaireWindow = new FicheUtilisateur(); // ← tu dois avoir une classe InventaireWindow
             inventaireWindow.Show();
 
             // Optionnel : Fermer la fenêtre actuelle si c'est une Window (non un UserControl)

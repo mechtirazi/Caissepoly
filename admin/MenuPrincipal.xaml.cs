@@ -23,5 +23,10 @@ namespace CaissePoly.admin
         {
             InitializeComponent();
         }
+
+        private void MenuPrincipale_Loaded(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

@@ -366,3 +366,5 @@ C:\Users\fkiah\OneDrive\Bureau\Net\TP1\gestionStock\caisse\Caissepoly\obj\Debug\
 C:\Users\fkiah\OneDrive\Bureau\Net\TP1\gestionStock\caisse\Caissepoly\obj\Debug\net8.0-windows\admin\Contact.baml
 C:\Users\fkiah\OneDrive\Bureau\Net\TP1\gestionStock\caisse\Caissepoly\obj\Debug\net8.0-windows\admin\information.baml
 C:\Users\fkiah\OneDrive\Bureau\Net\TP1\gestionStock\caisse\Caissepoly\obj\Debug\net8.0-windows\admin\inventaire\inventaire.baml
+C:\Users\fkiah\OneDrive\Bureau\Net\TP1\gestionStock\caisse\Caissepoly\obj\Debug\net8.0-windows\admin\BonSortieWindow.g.cs
+C:\Users\fkiah\OneDrive\Bureau\Net\TP1\gestionStock\caisse\Caissepoly\obj\Debug\net8.0-windows\admin\BonSortieWindow.baml
