@@ -8,7 +8,7 @@
         Title="Menu Principal" Height="700" Width="1100" Background="#FF667EEA" WindowStartupLocation="CenterScreen">
 
     <Grid>
-        <local:MenuPrincipale/>
+        <local:MenuPrincipale Loaded="MenuPrincipale_Loaded"/>
     </Grid>
        
 </Window>

@@ -5,32 +5,31 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:viewmodel="clr-namespace:CaissePoly.ViewModel"
              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             
+             xmlns:local1="clr-namespace:CaissePoly.ViewModel.Converters"
              mc:Ignorable="d"
              d:DesignHeight="450" d:DesignWidth="500">
 
-    <Grid Margin="10">
+    <UserControl.Resources>
+        <local1:IndexConverter x:Key="IndexConverter"/>
+    </UserControl.Resources>
+
+    <Grid Margin="11">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
 
-        <!-- Header section -->
+        <!-- Header -->
         <StackPanel Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Stretch" Margin="0,0,0,10">
-            <!-- Show all articles button -->
             <Button Content="Tous les articles"
                     Command="{Binding ResetArticlesCommand}"
-                   
                     ToolTip="Afficher tous les articles"
                     Margin="0,0,10,0"
                     Width="150"
                     Height="36"
-                    HorizontalAlignment="Left"
-                   />
-
-         
-
-            <!-- Article count -->
+                    HorizontalAlignment="Left" />
             <TextBlock Text="{Binding FilteredArticles.Count, StringFormat='{}{0} articles'}" 
                        FontSize="14" 
                        Foreground="#64748B" 
@@ -38,7 +37,7 @@
                        Margin="10,0,0,0"/>
         </StackPanel>
 
-        <!-- List of filtered articles -->
+        <!-- Article List -->
         <ListView Grid.Row="2"
                   ItemsSource="{Binding FilteredArticles}"
                   SelectedItem="{Binding SelectedArticle, Mode=TwoWay}"
@@ -70,6 +69,17 @@
 
             <ListView.View>
                 <GridView>
+                    <!-- Index Column -->
+                    <GridViewColumn Header="N°" Width="40">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding RelativeSource={RelativeSource AncestorType=ListViewItem}, Converter={StaticResource IndexConverter}}" />
+
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+
+                    <!-- Designation -->
                     <GridViewColumn Header="Désignation" Width="200">
                         <GridViewColumn.HeaderContainerStyle>
                             <Style TargetType="GridViewColumnHeader">
@@ -87,6 +97,7 @@
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
 
+                    <!-- Quantity -->
                     <GridViewColumn Header="Qté" Width="80">
                         <GridViewColumn.HeaderContainerStyle>
                             <Style TargetType="GridViewColumnHeader">
@@ -104,11 +115,14 @@
                                          VerticalAlignment="Center"
                                           KeyDown="TextBox_KeyDown"
                                          
+
+
                                          IsEnabled="{Binding DataContext.IsReadOnly, RelativeSource={RelativeSource AncestorType=UserControl}}"/>
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
 
+                    <!-- Unit Price -->
                     <GridViewColumn Header="P.U" Width="80">
                         <GridViewColumn.HeaderContainerStyle>
                             <Style TargetType="GridViewColumnHeader">
@@ -127,6 +141,7 @@
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
 
+                    <!-- Total -->
                     <GridViewColumn Header="Total" Width="80">
                         <GridViewColumn.HeaderContainerStyle>
                             <Style TargetType="GridViewColumnHeader">
@@ -148,5 +163,39 @@
                 </GridView>
             </ListView.View>
         </ListView>
+
+        <!-- Footer Summary -->
+        <Border Grid.Row="2"
+                Margin="0,10,0,0"
+                Background="#F1F5F9"
+                Padding="8"
+                BorderBrush="#CBD5E1"
+                BorderThickness="1"
+                CornerRadius="4"
+                VerticalAlignment="Bottom">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="2*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <TextBlock Text="Total" FontWeight="Bold" VerticalAlignment="Center" />
+
+                <TextBlock Grid.Column="1"
+                           Text="{Binding TotalQuantite}"
+                           HorizontalAlignment="Center"
+                           FontWeight="Bold"
+                           Foreground="#1E293B"
+                           VerticalAlignment="Center"/>
+
+                <TextBlock Grid.Column="2"
+                           Text="{Binding TotalPrix, StringFormat={}{0:N2} DT}"
+                           HorizontalAlignment="Right"
+                           FontWeight="Bold"
+                           Foreground="#1E293B"
+                           VerticalAlignment="Center"/>
+            </Grid>
+        </Border>
     </Grid>
 </UserControl>
