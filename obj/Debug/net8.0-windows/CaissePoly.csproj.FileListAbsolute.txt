@@ -366,3 +366,11 @@ C:\Users\fkiah\OneDrive\Bureau\Net\TP1\gestionStock\caisse\Caissepoly\obj\Debug\
 C:\Users\fkiah\OneDrive\Bureau\Net\TP1\gestionStock\caisse\Caissepoly\obj\Debug\net8.0-windows\admin\Contact.baml
 C:\Users\fkiah\OneDrive\Bureau\Net\TP1\gestionStock\caisse\Caissepoly\obj\Debug\net8.0-windows\admin\information.baml
 C:\Users\fkiah\OneDrive\Bureau\Net\TP1\gestionStock\caisse\Caissepoly\obj\Debug\net8.0-windows\admin\inventaire\inventaire.baml
+C:\Users\msi\source\repos\CaissePoly\CaissePoly\obj\Debug\net8.0-windows\admin\Contact.g.cs
+C:\Users\msi\source\repos\CaissePoly\CaissePoly\obj\Debug\net8.0-windows\admin\FicheUtilisateur.g.cs
+C:\Users\msi\source\repos\CaissePoly\CaissePoly\obj\Debug\net8.0-windows\admin\information.g.cs
+C:\Users\msi\source\repos\CaissePoly\CaissePoly\obj\Debug\net8.0-windows\admin\inventaire\inventaire.g.cs
+C:\Users\msi\source\repos\CaissePoly\CaissePoly\obj\Debug\net8.0-windows\admin\Contact.baml
+C:\Users\msi\source\repos\CaissePoly\CaissePoly\obj\Debug\net8.0-windows\admin\FicheUtilisateur.baml
+C:\Users\msi\source\repos\CaissePoly\CaissePoly\obj\Debug\net8.0-windows\admin\information.baml
+C:\Users\msi\source\repos\CaissePoly\CaissePoly\obj\Debug\net8.0-windows\admin\inventaire\inventaire.baml

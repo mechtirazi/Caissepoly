@@ -7,6 +7,6 @@
         mc:Ignorable="d"
         Height="450" Width="800">
     <Grid>
-        <local:Espece />
+        <local:Espece Loaded="Espece_Loaded_1" />
     </Grid>
 </Window>

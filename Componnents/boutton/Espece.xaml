@@ -88,7 +88,13 @@
          FontSize="22" Padding="10" Width="150"/>
             </StackPanel>
 
-           
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Stretch" Margin="0,10">
+                <TextBlock Text="Montant rendu :" Foreground="{StaticResource SecondaryText}" FontSize="18" Width="200"/>
+                <TextBlock Text="{Binding MontantRendu, StringFormat={}{0:F3} DT}" 
+               FontSize="15" 
+               FontWeight="Bold" 
+               Foreground="#3B82F6" Width="100"/>
+            </StackPanel>
         </StackPanel>
 
         <!-- ✅ BOUTONS ACTION -->
@@ -98,13 +104,13 @@
                 Background="{StaticResource DangerColor}"
                 Foreground="White"
                 Command="{Binding CancelCommand}"
-                Width="150" Click="Button_Click"/>
+                Width="150"  Click="Annuler_Click"/>
             <Button Content="Valider le paiement"
                 Style="{StaticResource RoundButtonStyle}"
                 Background="{StaticResource SuccessColor}"
                 Foreground="White"
                 Command="{Binding ValidatePaymentCommand}"
-                Width="200"/>
+                Width="200"  Click="Valider_Click"/>
         </StackPanel>
     </Grid>
 </UserControl>

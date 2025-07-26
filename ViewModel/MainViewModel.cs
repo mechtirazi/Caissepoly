@@ -1,13 +1,28 @@
 ﻿using CaissePoly.Model;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
+using System.Net.Sockets;
+using System.Printing;
 using System.Runtime.CompilerServices;
+using System.Text;
 using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Documents;
 using System.Windows.Input;
+using System.Windows.Media;
 using static CaissePoly.espece;
+using System.Diagnostics;
+using System.IO;
+using System.Windows.Xps;
+using System.Windows.Xps.Packaging;
+using System.Windows.Markup;
+using System.Windows.Controls;
+
+
 
 namespace CaissePoly.ViewModel
 {
@@ -135,6 +150,13 @@ namespace CaissePoly.ViewModel
                 if (SelectedArticle != null && int.TryParse(_valeurSaisie, out int quantite))
                 {
                     if (!IsReadOnly) return;
+
+                    if (quantite > SelectedArticle.quantiteStock)
+                    {
+                        MessageBox.Show($"Quantité saisie ({quantite}) dépasse le stock disponible ({SelectedArticle.quantiteStock}).", "Erreur", MessageBoxButton.OK, MessageBoxImage.Warning);
+                        return;
+                    }
+
                     SelectedArticle.quantiteVente = quantite;
                     _context.Article.Update(SelectedArticle);
                     _context.SaveChanges();
@@ -143,6 +165,7 @@ namespace CaissePoly.ViewModel
                 }
             }
         }
+
 
         private decimal _totalTicket;
         public decimal TotalTicket
@@ -162,7 +185,7 @@ namespace CaissePoly.ViewModel
         public Action CloseWindowAction { get; set; }
 
 
-
+        public ICommand PrintTicketCommand { get; }
         public ICommand SelectFamilleCommand { get; }
         public ICommand SelectArticleCommand { get; }
         public ICommand ValiderCommandeCommand { get; }
@@ -171,7 +194,7 @@ namespace CaissePoly.ViewModel
         public ICommand DeleteCharCommand { get; }
         public ICommand DeleteArticleCommand { get; }
         public ICommand ValiderPaiementCommand { get; }
-        public ICommand EspeceCommand{ get; }
+
         public ICommand CancelCommand { get; }
 
         public ICommand AfficherFamillesCommand { get; }
@@ -221,7 +244,17 @@ namespace CaissePoly.ViewModel
 
             EnterCommand = new RelayCommand(() =>
             {
-                if (IsReadOnly) return; // Prevent modification if in read-only mode
+                Console.WriteLine("***********************qqq");
+                if (!IsReadOnly) return;
+                Console.WriteLine("***********************qqqqqqq");// Prevent modification if in read-only mode
+                if (SelectedArticle.quantiteVente > SelectedArticle.quantiteStock)
+
+                {
+                    Console.WriteLine("***************");
+                    Console.WriteLine(SelectedArticle.quantiteVente);
+                    MessageBox.Show($"Quantité saisie ({SelectedArticle.quantiteVente}) dépasse le stock disponible ({SelectedArticle.quantiteStock}).", "Erreur", MessageBoxButton.OK, MessageBoxImage.Warning);
+                    return;
+                }
                 if (int.TryParse(ValeurSaisie, out int quantite) && SelectedArticle != null)
                 {
                     SelectedArticle.quantiteVente = quantite;
@@ -276,47 +309,64 @@ namespace CaissePoly.ViewModel
 
             ValiderCommandeCommand = new RelayCommand(() =>
             {
+                if (!IsReadOnly) return;
+                Console.WriteLine("***********");
                 RecalculerTotalTicket();
 
-                var nouveauTicket = new Ticket
+                var ticketTemporaire = new Ticket
                 {
                     DateTicket = DateTime.Now,
                     Total = TotalTicket,
+                    Ventes = new List<Vente>()
                 };
 
                 foreach (var article in FilteredArticles)
                 {
                     if (article.quantiteVente > 0)
                     {
-                        var vente = new Vente
+                        ticketTemporaire.Ventes.Add(new Vente
                         {
                             IdA = article.idA,
                             Quantite = article.quantiteVente,
                             PrixUnitaire = article.prixunitaire ?? 0,
                             Article = article
-                        };
-                        nouveauTicket.Ventes.Add(vente);
+                        });
                     }
                 }
 
-                _context.Tickets.Add(nouveauTicket);
-                _context.SaveChanges();
+                var viewModel = new EspeceViewModel(ticketTemporaire);
+                var fenetre = new espece(viewModel);
 
-                MessageBox.Show($"✅ Commande validée. Total : {TotalTicket} Dinars");
-                FilteredArticles.Clear();
-                var currentWindow = System.Windows.Application.Current.Windows
-                                      .OfType<Window>()
-                                      .FirstOrDefault(w => w.IsActive);
+                fenetre.ShowDialog();                      // <-- juste appeler ShowDialog()
+                bool? result = fenetre.PaymentResult;      // <-- récupérer résultat ici
 
-                if (currentWindow != null)
+                if (result == true)
                 {
-                    // Créer une nouvelle instance de la même fenêtre
-                    var newWindow = new MainWindow(); // Remplace par le nom réel de ta fenêtre
+                    _context.Tickets.Add(ticketTemporaire);
+                    _context.SaveChanges();
 
-                    newWindow.Show();   // Ouvre la nouvelle fenêtre
-                    currentWindow.Close(); // Ferme l'ancienne
+                    MessageBox.Show($"✅ Commande validée. Total : {TotalTicket} Dinars");
+
+                    FilteredArticles.Clear();
+
+                    var currentWindow = Application.Current.Windows
+                                          .OfType<Window>()
+                                          .FirstOrDefault(w => w.IsActive);
+
+                    if (currentWindow != null)
+                    {
+                        var newWindow = new MainWindow();
+                        newWindow.Show();
+                        currentWindow.Close();
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("❌ Paiement annulé. La commande n'a pas été enregistrée.");
                 }
             });
+
+
 
             if (ListeTickets.Any())
             {
@@ -351,24 +401,96 @@ namespace CaissePoly.ViewModel
 
                 CloseWindowAction?.Invoke();
             });
+            PrintTicketCommand = new RelayCommand(ImprimerTicket);
+            
 
-            EspeceCommand = new RelayCommand(() =>
+
+        }
+
+        private void ImprimerTicket()
+        {
+            var ticketCourant = _context.Tickets
+                .Include(t => t.Ventes)
+                .ThenInclude(v => v.Article)
+                .FirstOrDefault(t => t.IdT == SelectedTicket);
+
+            if (ticketCourant == null || ticketCourant.Ventes.Count == 0)
             {
+                MessageBox.Show("Aucun ticket à imprimer.");
+                return;
+            }
 
-                var ticket = _context.Tickets.FirstOrDefault(t => t.IdT == SelectedTicket);
-                if (ticket != null)
+            FlowDocument doc = new FlowDocument();
+            doc.FontFamily = new FontFamily("Consolas");
+            doc.FontSize = 14;
+            doc.PageWidth = 300;
+
+            Paragraph header = new Paragraph(new Run("🧾 Ticket de caisse PolySoft"));
+            header.TextAlignment = TextAlignment.Center;
+            header.FontWeight = FontWeights.Bold;
+            doc.Blocks.Add(header);
+
+            doc.Blocks.Add(new Paragraph(new Run($"🕒 {ticketCourant.DateTicket}")));
+            doc.Blocks.Add(new Paragraph(new Run($"💳 Paiement : {ticketCourant.ModePaiement}")));
+            doc.Blocks.Add(new Paragraph(new Run("----------------------------------")));
+
+            foreach (var vente in ticketCourant.Ventes)
+            {
+                string designation = vente.Article?.designation ?? "Article inconnu";
+                decimal totalLigne = vente.Quantite * vente.PrixUnitaire;
+                string ligne = $"{designation} x{vente.Quantite} = {totalLigne:F2} DT";
+                doc.Blocks.Add(new Paragraph(new Run(ligne)));
+            }
+
+            doc.Blocks.Add(new Paragraph(new Run("----------------------------------")));
+            doc.Blocks.Add(new Paragraph(new Run($"🧮 Total : {ticketCourant.Total:F2} DT")));
+            doc.Blocks.Add(new Paragraph(new Run("✅ Merci pour votre achat")));
+
+            // 🖨️ Sauvegarde en XPS (temporaire)
+            string xpsPath = Path.Combine(Path.GetTempPath(), "ticket_temp.xps");
+            using (var xpsDoc = new XpsDocument(xpsPath, FileAccess.Write))
+            {
+                XpsDocumentWriter writer = XpsDocument.CreateXpsDocumentWriter(xpsDoc);
+                writer.Write(((IDocumentPaginatorSource)doc).DocumentPaginator);
+            }
+
+            // 📄 Convertir XPS -> PDF avec Microsoft Print to PDF
+            string pdfPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), $"Ticket_{ticketCourant.IdT}.pdf");
+
+            PrintDialog printDialog = new PrintDialog();
+            printDialog.PrintQueue = new PrintQueue(new PrintServer(), "Microsoft Print to PDF");
+            printDialog.PrintTicket = new System.Printing.PrintTicket
+            {
+                PageOrientation = PageOrientation.Portrait
+            };
+
+            using (var xpsDoc = new XpsDocument(xpsPath, FileAccess.Read))
+            {
+                var paginator = xpsDoc.GetFixedDocumentSequence().DocumentPaginator;
+
+                // Rediriger vers PDF avec le nom du fichier
+                var writer = PrintQueue.CreateXpsDocumentWriter(printDialog.PrintQueue);
+                printDialog.PrintQueue.CurrentJobSettings.Description = pdfPath;
+                writer.Write(paginator);
+            }
+
+            // 🗃️ Attendre un peu puis ouvrir le fichier
+            Task.Delay(1500).ContinueWith(_ =>
+            {
+                if (File.Exists(pdfPath))
                 {
-                    var vm = new EspeceViewModel(ticket);
-                    var window = new espece(vm);
-                    window.ShowDialog();
-                    UpdateTicketInfo(); // Recharge les infos après fermeture
-                }
-                else
-                {
-                    MessageBox.Show("Aucun ticket sélectionné");
+                    Process.Start(new ProcessStartInfo
+                    {
+                        FileName = pdfPath,
+                        UseShellExecute = true
+                    });
                 }
             });
         }
+
+
+
+
 
         private void ChargerArticlesParFamille()
         {

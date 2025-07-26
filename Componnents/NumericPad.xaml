@@ -138,15 +138,16 @@
         Foreground="White"
         Padding="10"
         Command="{Binding ValiderCommandeCommand}" />
-        <Button Content="💶 Espèce"
-            Grid.Row="0" Grid.Column="3"
-            Margin="10"
-            FontSize="20"
-            FontWeight="Bold"
-            Background="#3B82F6"
-            Foreground="White"
-            Padding="10"
-            Command="{Binding EspeceCommand}" />
+            <Button Content="🖨️ Imprimer Ticket"
+        Grid.Row="0" Grid.Column="3"
+        Margin="10"
+        FontSize="20"
+        FontWeight="Bold"
+        Background="#3B82F6"
+        Foreground="White"
+        Padding="10"
+        Command="{Binding PrintTicketCommand}" />
+
         </Grid>
     </Grid>
 </UserControl>

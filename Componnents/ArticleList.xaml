@@ -102,6 +102,7 @@
                                          Width="60"
                                          HorizontalAlignment="Center"
                                          VerticalAlignment="Center"
+                                          KeyDown="TextBox_KeyDown"
                                          
                                          IsEnabled="{Binding DataContext.IsReadOnly, RelativeSource={RelativeSource AncestorType=UserControl}}"/>
                             </DataTemplate>

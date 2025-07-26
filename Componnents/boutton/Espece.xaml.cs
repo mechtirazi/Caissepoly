@@ -30,9 +30,20 @@ namespace CaissePoly.Componnents.boutton
 
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void Valider_Click(object sender, RoutedEventArgs e)
         {
-            Window.GetWindow(this)?.Close();
+            // Récupère la fenêtre parente
+            Window.GetWindow(this).DialogResult = true;
+            Window.GetWindow(this).Close();
         }
+
+        private void Annuler_Click(object sender, RoutedEventArgs e)
+        {
+            Window.GetWindow(this).DialogResult = false;
+            Window.GetWindow(this).Close();
+        }
+
+
+
     }
 }

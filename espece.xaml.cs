@@ -23,14 +23,19 @@ namespace CaissePoly
     /// </summary>
     public partial class espece : Window
     {
+        // Propriété pour stocker le résultat du paiement (null = annulation, true = validé, false = rejeté)
+        public bool? PaymentResult { get; private set; } = null;
         public espece(EspeceViewModel viewModel)
         {
             InitializeComponent();
             DataContext = viewModel;
 
-            if (viewModel is ViewModelBase vm)
-                vm.CloseWindowAction = this.Close;
-            viewModel.CloseWindowAction = this.Close;
+            // Cette action est appelée par le ViewModel pour fermer la fenêtre et transmettre le résultat
+            viewModel.CloseWindowAction = result =>
+            {
+                PaymentResult = result; // Stocker le résultat ici
+                this.Close();           // Fermer la fenêtre
+            };
         }
 
 
@@ -40,6 +45,11 @@ namespace CaissePoly
             {
                 vm.CloseWindowAction = this.Close;
             }
+        }
+
+        private void Espece_Loaded_1(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

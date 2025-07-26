@@ -27,7 +27,19 @@ namespace CaissePoly.Componnents
             InitializeComponent();
 
         }
-     
+        private void TextBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Return || e.Key == Key.Enter)
+            {
+                if (DataContext is MainViewModel vm && vm.EnterCommand.CanExecute(null))
+                {
+                    vm.EnterCommand.Execute(null);
+                    e.Handled = true;
+                }
+            }
+        }
+
+
 
 
     }

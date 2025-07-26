@@ -1,39 +1,39 @@
 ﻿using CaissePoly.Model;
 using Microsoft.EntityFrameworkCore;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
+
 namespace CaissePoly.ViewModel
 {
     public class EspeceViewModel : ViewModelBase
     {
         private readonly CDBContext _context = new CDBContext();
 
-        private string _modePaiement;
-        public string ModePaiement
-        {
-            get => _modePaiement;
-            set { _modePaiement = value; OnPropertyChanged(); }
-        }
-
         public Ticket TicketActuel { get; set; }
-        private decimal _montantRecu;
+        private decimal montantRecu;
         public decimal MontantRecu
         {
-            get => _montantRecu;
-            set { _montantRecu = value; OnPropertyChanged(); }
+            get => montantRecu;
+            set
+            {
+                if (montantRecu != value)
+                {
+                    montantRecu = value;
+                    OnPropertyChanged();
+                    OnPropertyChanged(nameof(MontantRendu));
+                }
+            }
         }
 
         public decimal TotalTicket => TicketActuel?.Total ?? 0;
+        public decimal MontantRendu => MontantRecu - TotalTicket;
 
         public ICommand ValidatePaymentCommand { get; }
         public ICommand CancelCommand { get; }
 
-        public Action CloseWindowAction { get; set; }
+        public Action<bool?> CloseWindowAction { get; set; }
 
         public EspeceViewModel(Ticket ticket)
         {
@@ -43,31 +43,29 @@ namespace CaissePoly.ViewModel
             {
                 if (MontantRecu >= TotalTicket)
                 {
-                    // Met à jour le mode de paiement
-                    ModePaiement = "Espèce";
-                    TicketActuel.ModePaiement = ModePaiement;
+                    TicketActuel.ModePaiement = "Espèce";
 
                     var t = _context.Tickets.FirstOrDefault(x => x.IdT == TicketActuel.IdT);
                     if (t != null)
                     {
-                        t.ModePaiement = ModePaiement;
+                        t.ModePaiement = "Espèce";
                         _context.SaveChanges();
                     }
 
-                    CloseWindowAction?.Invoke(); // ✅ Ferme la fenêtre
+                    CloseWindowAction?.Invoke(true); // Payment OK → close with true
                 }
                 else
                 {
                     MessageBox.Show($"Montant insuffisant. Montant à payer : {TotalTicket:F3} DT");
-                    // ❌ Ne ferme pas la fenêtre
+                    CloseWindowAction?.Invoke(false); // Payment failed → close with false
                 }
-            }); 
+            });
 
             CancelCommand = new RelayCommand(() =>
             {
-                CloseWindowAction?.Invoke();
+                CloseWindowAction?.Invoke(null); // Cancel → close with null
             });
         }
     }
-}
 
+}
